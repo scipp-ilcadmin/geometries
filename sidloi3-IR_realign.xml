@@ -1,4 +1,4 @@
-<lccdd xmlns:compact="http://www.lcsim.org/schemas/compact/1.0" 
+<lccdd xmlns:compact="http://www.lcsim.org/schemas/compact/0.0" 
     xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" 
     xs:noNamespaceSchemaLocation="http://www.lcsim.org/schemas/compact/1.0/compact.xsd">
     <info name="sidloi3-IR_realign"
@@ -17,7 +17,6 @@
         <constant name="EcalEndcap_zmin" value="1657.0"/>
         <constant name="tracking_region_radius" value="EcalBarrel_rmin - 1.0"/>
         <constant name="tracking_region_zmax" value="EcalEndcap_zmin - 1.0"/>
-        <constant name="lumical_zmin" value="155.7*cm"/>
         <constant name="VXD_CF_sensor" value="0.026*cm"/>
         <constant name="VXD_CF_support" value="0.05*cm"/>
         <constant name="bp_cone_slope" value="(8.96-1.20)/(185-6.25)"/>
@@ -637,7 +636,7 @@
         </detector>
         <detector id="11" name="LumiCal" reflect="true" type="CylindricalEndcapCalorimeter" readout="LumiCalHits" vis="LumiCalVis" calorimeterType="LUMI">
             <comment>Luminosity Calorimeter</comment>
-            <dimensions inner_r = "6.0*cm" inner_z = "lumical_zmin" outer_r = "20.0*cm" />
+            <dimensions inner_r = "6.0*cm" inner_z = "168*cm" outer_r = "20.0*cm" />
             <rotation y_rotation = "-crossing_angle/2" />
             <layer repeat="20" >
                 <!--TODO-->
@@ -656,10 +655,10 @@
             </layer>
         </detector>
         
-        <detector id="12" name="BeamCal" reflect="true" allign_to_pipeout="true" type="ForwardDetector" readout="BeamCalHits" vis="BeamCalVis" calorimeterType="BEAM">
+        <detector id="12" name="BeamCal" reflect="true" align_to_pipeout="true" type="ForwardDetector" readout="BeamCalHits" vis="BeamCalVis" calorimeterType="BEAM">
             <comment>Beam Calorimeter</comment>
             <dimensions outer_r="14.0*cm" inner_r="0.0*cm" inner_z="326.5*cm" />
-            <beampipe crossing_angle="0.014" outgoing_r="2.05*cm" incoming_r="1.55*cm" />
+            <beampipe crossing_angle="0.014" outgoing_r="2.05*cm" incoming_r="1.55*cm" plug_type="full"/>
             <layer repeat="50">
                 <slice material="TungstenDens24" thickness="0.25*cm" />
                 <slice material="Silicon" thickness="0.032*cm" sensitive="yes" />
@@ -684,31 +683,43 @@
         <comment>Steel beampipe cones</comment>
         <detector name="ForwardSupportTube" type="PolyconeSupport" insideTrackingVolume="false" vis="InvisibleNoDaughters">
             <material name="Steel235"/>
-            <zplane rmin = "19.4*cm" rmax="21.1*cm" z="170.0*cm" />
+            <zplane rmin = "19.4*cm" rmax="21.1*cm" z="182.0*cm" />
             <zplane rmin="19.4*cm" rmax="21.1*cm"  z="677.3*cm"/>
         </detector>             
         <detector name="BackwardSupportTube" type="PolyconeSupport" insideTrackingVolume="false" vis="InvisibleNoDaughters">
             <material name="Steel235"/>
             <zplane rmin="19.4*cm" rmax="21.1*cm"  z="-677.3*cm"/>
-            <zplane rmin = "19.4*cm" rmax="21.1*cm" z="-170.0*cm" />
+            <zplane rmin = "19.4*cm" rmax="21.1*cm" z="-182.0*cm" />
         </detector>
         <comment>Incoming and outgoing beampipes in far forward region</comment>
+        <!--detector name="NorthCombinedBeampipe" type="TubeSegment" vis="InvisibleNoDaughters">
+            <material name="Iron" />
+            <tubs rmin="4.158*cm" rmax="4.198*cm" zhalf="8.75*cm" />
+            <position x="0.25*cm" y="0" z="335.25*cm" />
+            <rotation x="0.0" y="0.0" z="0.0" />
+        </detector>
+        <detector name="SouthCombinedBeampipe" type="TubeSegment" vis="InvisibleNoDaughters">
+            <material name="Iron" />
+            <tubs rmin="4.158*cm" rmax="4.198*cm" zhalf="8.75*cm" />
+            <position x="0.25*cm" y="0" z="-335.25*cm" />
+            <rotation x="0.0" y="0.0" z="0.0" />
+        </detector-->
         <detector name="NorthIncomingBeampipe" type="TubeSegment" vis="InvisibleNoDaughters">
             <material name="Iron" />
             <tubs rmin="1.5*cm" rmax="1.54*cm" zhalf="8.75*cm" />
             <position x="-2.347*cm" y="0" z="335.25*cm" />
             <rotation x="0.0" y="0.0070" z="0.0" />
         </detector>
-        <detector name="SouthIncomingBeampipe" type="TubeSegment" vis="InvisibleNoDaughters">
-            <material name="Iron" />
-            <tubs rmin="1.5*cm" rmax="1.54*cm" zhalf="8.75*cm" />
-            <position x="-2.347*cm" y="0" z="-335.25*cm" />
-            <rotation x="0.0" y="-0.0070" z="0.0" />
-        </detector>
         <detector name="NorthOutgoingBeampipe" type="TubeSegment" vis="InvisibleNoDaughters">
             <material name="Iron" />
             <tubs rmin="2.0*cm" rmax="2.04*cm" zhalf="8.75*cm" />
             <position x="2.347*cm" y="0" z="335.25*cm" />
+            <rotation x="0.0" y="-0.0070" z="0.0" />
+        </detector>
+        <detector name="SouthIncomingBeampipe" type="TubeSegment" vis="InvisibleNoDaughters">
+            <material name="Iron" />
+            <tubs rmin="1.5*cm" rmax="1.54*cm" zhalf="8.75*cm" />
+            <position x="-2.347*cm" y="0" z="-335.25*cm" />
             <rotation x="0.0" y="-0.0070" z="0.0" />
         </detector>
         <detector name="SouthOutgoingBeampipe" type="TubeSegment" vis="InvisibleNoDaughters">
@@ -720,12 +731,12 @@
         <detector name="BeamPipeLiner" type="PolyconeSupport" insideTrackingVolume="true" vis="InvisibleNoDaughters">
             <comment>BeamPipe Liner to shield bremsstrahlung photons</comment>
             <material name="Titanium"/>
-            <zplane rmin = "((lumical_zmin-6.25*cm)*bp_cone_slope+1.1925*cm)" rmax="((lumical_zmin-6.25*cm)*bp_cone_slope+1.2*cm)" z="-lumical_zmin" />
-            <zplane rmin="1.1925*cm"    rmax="1.2*cm"  z="-6.251*cm"/> <!--FIXME:154*cm replaced tracking_region_zmax to accomodate LumiCal--> 
+            <zplane rmin = "((tracking_region_zmax-6.25*cm)*bp_cone_slope+1.1925*cm)" rmax="((tracking_region_zmax-6.25*cm)*bp_cone_slope+1.2*cm)" z="-tracking_region_zmax" />
+            <zplane rmin="1.1925*cm"    rmax="1.2*cm"  z="-6.251*cm"/>
             <zplane rmin="1.1975*cm" rmax="1.20*cm" z="-6.25*cm"  />
             <zplane rmin="1.1975*cm" rmax="1.20*cm" z="6.25*cm" />
             <zplane rmin="1.1925*cm" rmax="1.2*cm" z="6.251*cm" />
-            <zplane rmin = "((lumical_zmin-6.25*cm)*bp_cone_slope+1.1925*cm)" rmax="((lumical_zmin-6.25*cm)*bp_cone_slope+1.2*cm)" z="lumical_zmin" />
+            <zplane rmin = "((tracking_region_zmax-6.25*cm)*bp_cone_slope+1.1925*cm)" rmax="((tracking_region_zmax-6.25*cm)*bp_cone_slope+1.2*cm)" z="tracking_region_zmax" />
         </detector>   
         <detector name="BeamPipeVacuum" type="PolyconeSupport" insideTrackingVolume="true" vis="InvisibleNoDaughters">
             <comment>Vacuum inside beampipe</comment>
@@ -741,14 +752,14 @@
             <material name="Vacuum"/>
             <rotation y_rotation="-crossing_angle/2" />
             <zplane rmin="0.*cm" rmax="6.0*cm"    z="tracking_region_zmax"/> 
-            <zplane rmin="0.*cm" rmax="6.0*cm"    z="170*cm" />
+            <zplane rmin="0.*cm" rmax="6.0*cm"    z="182*cm" />
             <zplane rmin="0.*cm" rmax="14.0*cm"  z="313.5*cm"/>
         </detector> 
         <detector name="BackwardVacuum" type="PolyconeSupport" insideTrackingVolume="false" vis="InvisibleNoDaughters">
             <material name="Vacuum"/>
             <rotation y_rotation="crossing_angle/2" />
             <zplane rmin="0.*cm" rmax="14.0*cm"  z="-313.5*cm"/>
-            <zplane rmin="0.*cm" rmax="6.0*cm"    z="-170*cm" />
+            <zplane rmin="0.*cm" rmax="6.0*cm"    z="-182*cm" />
             <zplane rmin="0.*cm" rmax="6.0*cm"    z="-tracking_region_zmax"/> 
         </detector> 
         <comment>Vertex Detector Supports and Readout</comment>
@@ -825,9 +836,9 @@
         </detector>        
         <detector name="VXDcableZbackwardOuter" type="PolyconeSupport" insideTrackingVolume="true" vis="InvisibleNoDaughters">
             <material name="Copper"/>
-            <zplane rmin = "((lumical_zmin-6.25*cm)*bp_cone_slope+1.4*cm)" 
-            rmax = "((lumical_zmin-6.25*cm)*bp_cone_slope+1.404*cm)" 
-            z="-lumical_zmin" />
+            <zplane rmin = "((tracking_region_zmax-6.25*cm)*bp_cone_slope+1.4*cm)" 
+            rmax = "((tracking_region_zmax-6.25*cm)*bp_cone_slope+1.404*cm)" 
+            z="-tracking_region_zmax" />
             <zplane rmin="1.542*cm"    rmax="1.552*cm"  z="-12.01*cm"/>
         </detector>
         <detector name="VXDcableZbackwardInner" type="PolyconeSupport" insideTrackingVolume="true" vis="InvisibleNoDaughters">
@@ -837,9 +848,9 @@
         </detector>
         <detector name="VXDcableZforwardOuter" type="PolyconeSupport" insideTrackingVolume="true" vis="InvisibleNoDaughters">
             <material name="Copper"/>
-            <zplane rmin = "((lumical_zmin-6.25*cm)*bp_cone_slope+1.4*cm)" 
-            rmax = "((lumical_zmin-6.25*cm)*bp_cone_slope+1.404*cm)" 
-            z="lumical_zmin" />
+            <zplane rmin = "((tracking_region_zmax-6.25*cm)*bp_cone_slope+1.4*cm)" 
+            rmax = "((tracking_region_zmax-6.25*cm)*bp_cone_slope+1.404*cm)" 
+            z="tracking_region_zmax" />
             <zplane rmin="1.542*cm"    rmax="1.552*cm"  z="12.01*cm"/>
         </detector>
         <detector name="VXDcableZforwardInner" type="PolyconeSupport" insideTrackingVolume="true" vis="InvisibleNoDaughters">
@@ -1082,7 +1093,7 @@
         <detector name="ForwardM1" type="PolyconeSupport" insideTrackingVolume="false" vis="InvisibleNoDaughters">
             <material name="TungstenDens24"/>
             <rotation y_rotation="-crossing_angle/2" />
-            <zplane rmin= "7.0*cm" rmax="10.0*cm" z="170.0*cm" /><!--determined by zmax of lumical-->
+            <zplane rmin= "7.0*cm" rmax="10.0*cm" z="182.0*cm" /><!--determined by zmax of lumical-->
             <zplane rmin="14.0*cm" rmax="17*cm"  z="313.5*cm"/><!--determined by zmin of FowardLowZ-->
             <zplane rmin="14.0*cm" rmax="17*cm"  z="326.5*cm"/><!--determined by zmax of FowardLowZ-->
         </detector>
@@ -1092,10 +1103,10 @@
             <rotation y_rotation="crossing_angle/2" />
             <zplane rmin="14.0*cm" rmax="17*cm"  z="-326.5*cm"/>
             <zplane rmin="14.0*cm" rmax="17*cm"  z="-313.5*cm"/>
-            <zplane rmin= "7.0*cm" rmax="10.0*cm" z="-170.0*cm" />
+            <zplane rmin= "7.0*cm" rmax="10.0*cm" z="-182.0*cm" />
         </detector>
      
-        <detector name="ForwardLowZ" type="ForwardDetector" reflect="true" allign_to_pipeout="true">
+        <detector name="ForwardLowZ" type="ForwardDetector" reflect="true" align_to_pipeout="true">
             <dimensions outer_r="14.0*cm" inner_r="0.0*cm" inner_z="313.5*cm" />
             <beampipe crossing_angle="0.014" outgoing_r="2.05*cm" incoming_r="1.55*cm" />
             <layer repeat="1">
