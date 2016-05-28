@@ -1,0 +1,2872 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lcdd xmlns:lcdd="http://www.lcsim.org/schemas/lcdd/1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="http://www.lcsim.org/schemas/lcdd/1.0/lcdd.xsd">
+  <header>
+    <detector name="sidloi3-IR_realign" />
+    <generator name="GeomConverter" version="1.0" file="./vertex.xml" checksum="2181445711" />
+    <author name="Norman Graf, Jeremy McCormick, Christopher Milke" />
+    <comment>The compact format for the Silicon Detector as described in the LOI 090204. Includes global XY segmentation in cal endcaps.</comment>
+  </header>
+  <iddict>
+    <idspec name="SiVertexEndcapHits" length="58">
+      <idfield signed="false" label="system" length="6" start="0" />
+      <idfield signed="false" label="barrel" length="3" start="6" />
+      <idfield signed="false" label="layer" length="4" start="9" />
+      <idfield signed="false" label="wedge" length="6" start="13" />
+      <idfield signed="false" label="module" length="6" start="19" />
+      <idfield signed="false" label="sensor" length="1" start="25" />
+      <idfield signed="true" label="side" length="2" start="32" />
+      <idfield signed="false" label="strip" length="24" start="34" />
+    </idspec>
+    <idspec name="EcalBarrelHits" length="64">
+      <idfield signed="false" label="system" length="6" start="0" />
+      <idfield signed="false" label="barrel" length="3" start="6" />
+      <idfield signed="false" label="module" length="4" start="9" />
+      <idfield signed="false" label="layer" length="6" start="13" />
+      <idfield signed="false" label="slice" length="5" start="19" />
+      <idfield signed="true" label="x" length="16" start="32" />
+      <idfield signed="true" label="y" length="16" start="48" />
+    </idspec>
+    <idspec name="MuonEndcapHits" length="64">
+      <idfield signed="false" label="system" length="8" start="0" />
+      <idfield signed="false" label="barrel" length="3" start="8" />
+      <idfield signed="false" label="module" length="4" start="11" />
+      <idfield signed="false" label="layer" length="8" start="15" />
+      <idfield signed="false" label="slice" length="5" start="23" />
+      <idfield signed="true" label="x" length="16" start="32" />
+      <idfield signed="true" label="y" length="16" start="48" />
+    </idspec>
+    <idspec name="HcalEndcapHits" length="64">
+      <idfield signed="false" label="system" length="6" start="0" />
+      <idfield signed="false" label="barrel" length="3" start="6" />
+      <idfield signed="false" label="module" length="4" start="9" />
+      <idfield signed="false" label="layer" length="8" start="13" />
+      <idfield signed="false" label="slice" length="5" start="21" />
+      <idfield signed="true" label="x" length="16" start="32" />
+      <idfield signed="true" label="y" length="16" start="48" />
+    </idspec>
+    <idspec name="SiTrackerEndcapHits" length="54">
+      <idfield signed="false" label="system" length="6" start="0" />
+      <idfield signed="false" label="barrel" length="3" start="6" />
+      <idfield signed="false" label="layer" length="4" start="9" />
+      <idfield signed="false" label="module" length="16" start="13" />
+      <idfield signed="false" label="sensor" length="1" start="29" />
+      <idfield signed="true" label="side" length="2" start="32" />
+      <idfield signed="false" label="strip" length="20" start="34" />
+    </idspec>
+    <idspec name="MuonBarrelHits" length="64">
+      <idfield signed="false" label="system" length="8" start="0" />
+      <idfield signed="false" label="barrel" length="3" start="8" />
+      <idfield signed="false" label="module" length="4" start="11" />
+      <idfield signed="false" label="layer" length="8" start="15" />
+      <idfield signed="false" label="slice" length="4" start="23" />
+      <idfield signed="true" label="x" length="16" start="32" />
+      <idfield signed="true" label="y" length="16" start="48" />
+    </idspec>
+    <idspec name="SiVertexBarrelHits" length="58">
+      <idfield signed="false" label="system" length="6" start="0" />
+      <idfield signed="false" label="barrel" length="3" start="6" />
+      <idfield signed="false" label="layer" length="4" start="9" />
+      <idfield signed="false" label="module" length="12" start="13" />
+      <idfield signed="false" label="sensor" length="1" start="25" />
+      <idfield signed="true" label="side" length="2" start="32" />
+      <idfield signed="false" label="strip" length="24" start="34" />
+    </idspec>
+    <idspec name="LumiCalHits" length="64">
+      <idfield signed="false" label="system" length="8" start="0" />
+      <idfield signed="false" label="layer" length="8" start="8" />
+      <idfield signed="false" label="barrel" length="3" start="16" />
+      <idfield signed="true" label="x" length="16" start="32" />
+      <idfield signed="true" label="y" length="16" start="48" />
+    </idspec>
+    <idspec name="SiTrackerForwardHits" length="58">
+      <idfield signed="false" label="system" length="6" start="0" />
+      <idfield signed="false" label="barrel" length="3" start="6" />
+      <idfield signed="false" label="layer" length="4" start="9" />
+      <idfield signed="false" label="wedge" length="6" start="13" />
+      <idfield signed="false" label="module" length="6" start="19" />
+      <idfield signed="false" label="sensor" length="1" start="25" />
+      <idfield signed="true" label="side" length="2" start="32" />
+      <idfield signed="false" label="strip" length="24" start="34" />
+    </idspec>
+    <idspec name="HcalBarrelHits" length="64">
+      <idfield signed="false" label="system" length="6" start="0" />
+      <idfield signed="false" label="barrel" length="3" start="6" />
+      <idfield signed="false" label="module" length="4" start="9" />
+      <idfield signed="false" label="layer" length="6" start="13" />
+      <idfield signed="false" label="slice" length="5" start="19" />
+      <idfield signed="true" label="x" length="16" start="32" />
+      <idfield signed="true" label="y" length="16" start="48" />
+    </idspec>
+    <idspec name="SiTrackerBarrelHits" length="54">
+      <idfield signed="false" label="system" length="6" start="0" />
+      <idfield signed="false" label="barrel" length="3" start="6" />
+      <idfield signed="false" label="layer" length="4" start="9" />
+      <idfield signed="false" label="module" length="12" start="13" />
+      <idfield signed="false" label="sensor" length="1" start="25" />
+      <idfield signed="true" label="side" length="2" start="32" />
+      <idfield signed="false" label="strip" length="20" start="34" />
+    </idspec>
+    <idspec name="BeamCalHits" length="64">
+      <idfield signed="false" label="system" length="8" start="0" />
+      <idfield signed="false" label="layer" length="8" start="8" />
+      <idfield signed="false" label="barrel" length="3" start="16" />
+      <idfield signed="true" label="x" length="16" start="32" />
+      <idfield signed="true" label="y" length="16" start="48" />
+    </idspec>
+    <idspec name="EcalEndcapHits" length="64">
+      <idfield signed="false" label="system" length="6" start="0" />
+      <idfield signed="false" label="barrel" length="3" start="6" />
+      <idfield signed="false" label="module" length="4" start="9" />
+      <idfield signed="false" label="layer" length="6" start="13" />
+      <idfield signed="false" label="slice" length="5" start="19" />
+      <idfield signed="true" label="x" length="16" start="32" />
+      <idfield signed="true" label="y" length="16" start="48" />
+    </idspec>
+  </iddict>
+  <sensitive_detectors>
+    <tracker name="SiVertexBarrel" ecut="0.0" eunit="MeV" verbose="0" hits_collection="SiVertexBarrelHits">
+      <idspecref ref="SiVertexBarrelHits" />
+    </tracker>
+    <tracker name="SiVertexEndcap" ecut="0.0" eunit="MeV" verbose="0" hits_collection="SiVertexEndcapHits">
+      <idspecref ref="SiVertexEndcapHits" />
+    </tracker>
+  </sensitive_detectors>
+  <limits>
+    <limitset name="cal_limits">
+      <limit name="step_length_max" unit="mm" particles="*" value="5.0" />
+    </limitset>
+  </limits>
+  <regions>
+    <region name="TrackingRegion" store_secondaries="true" kill_tracks="false" cut="10.0" lunit="mm" threshold="1.0" eunit="MeV" />
+  </regions>
+  <display>
+    <vis name="MuonBarrelVis" line_style="unbroken" drawing_style="wireframe" show_daughters="true" visible="true">
+      <color R="0.28125" G="0.390625" B="0.625" alpha="1.0" />
+    </vis>
+    <vis name="SiVertexEndcapVis" line_style="unbroken" drawing_style="wireframe" show_daughters="true" visible="true">
+      <color R="0.5" G="0.7" B="0.4" alpha="1.0" />
+    </vis>
+    <vis name="EcalEndcapVis" line_style="unbroken" drawing_style="wireframe" show_daughters="true" visible="true">
+      <color R="0.77" G="0.74" B="0.86" alpha="1.0" />
+    </vis>
+    <vis name="HcalEndcapVis" line_style="unbroken" drawing_style="wireframe" show_daughters="true" visible="true">
+      <color R="0.296875" G="0.48828125" B="0.4921875" alpha="1.0" />
+    </vis>
+    <vis name="SolenoidCoilVis" line_style="unbroken" drawing_style="wireframe" show_daughters="true" visible="true">
+      <color R="0.20703125" G="0.453125" B="0.77734375" alpha="1.0" />
+    </vis>
+    <vis name="SiTrackerEndcapVis" line_style="unbroken" drawing_style="wireframe" show_daughters="true" visible="true">
+      <color R="0.8" G="1.0" B="0.1" alpha="1.0" />
+    </vis>
+    <vis name="BeamCalVis" line_style="unbroken" drawing_style="wireframe" show_daughters="true" visible="true">
+      <color R="0.5" G="0.5" B="0.5" alpha="1.0" />
+    </vis>
+    <vis name="SiTrackerForwardVis" line_style="unbroken" drawing_style="wireframe" show_daughters="true" visible="true">
+      <color R="0.8" G="0.1" B="0.1" alpha="1.0" />
+    </vis>
+    <vis name="HcalBarrelVis" line_style="unbroken" drawing_style="wireframe" show_daughters="true" visible="true">
+      <color R="0.296875" G="0.48828125" B="0.4921875" alpha="1.0" />
+    </vis>
+    <vis name="EcalBarrelVis" line_style="unbroken" drawing_style="wireframe" show_daughters="true" visible="true">
+      <color R="0.77" G="0.74" B="0.86" alpha="1.0" />
+    </vis>
+    <vis name="SiTrackerBarrelVis" line_style="unbroken" drawing_style="wireframe" show_daughters="true" visible="true">
+      <color R="0.8" G="1.0" B="0.1" alpha="1.0" />
+    </vis>
+    <vis name="LumiCalVis" line_style="unbroken" drawing_style="wireframe" show_daughters="true" visible="true">
+      <color R="0.5" G="0.5" B="0.5" alpha="1.0" />
+    </vis>
+    <vis name="InvisibleNoDaughters" line_style="unbroken" drawing_style="wireframe" show_daughters="false" visible="false">
+      <color R="0.0" G="0.0" B="0.0" alpha="0.0" />
+    </vis>
+    <vis name="SiVertexBarrelVis" line_style="unbroken" drawing_style="wireframe" show_daughters="true" visible="true">
+      <color R="0.5" G="0.7" B="0.4" alpha="1.0" />
+    </vis>
+    <vis name="BeampipeVis" line_style="unbroken" drawing_style="wireframe" show_daughters="true" visible="true">
+      <color R="0.7734375" G="0.8671875" B="0.99609375" alpha="1.0" />
+    </vis>
+    <vis name="InvisibleWithDaughters" line_style="unbroken" drawing_style="wireframe" show_daughters="true" visible="false">
+      <color R="0.0" G="0.0" B="0.0" alpha="0.0" />
+    </vis>
+    <vis name="MuonEndcapVis" line_style="unbroken" drawing_style="wireframe" show_daughters="true" visible="true">
+      <color R="0.28125" G="0.390625" B="0.625" alpha="1.0" />
+    </vis>
+    <vis name="WorldVis" line_style="unbroken" drawing_style="wireframe" show_daughters="true" visible="false">
+      <color R="1.0" G="1.0" B="1.0" alpha="1.0" />
+    </vis>
+    <vis name="TrackingVis" line_style="unbroken" drawing_style="wireframe" show_daughters="true" visible="false">
+      <color R="1.0" G="1.0" B="1.0" alpha="1.0" />
+    </vis>
+  </display>
+  <gdml>
+    <define>
+      <rotation name="identity_rot" x="0.0" y="0.0" z="0.0" unit="radian" />
+      <rotation name="reflect_rot" x="3.141592653589793" y="0.0" z="0.0" unit="radian" />
+      <position name="identity_pos" x="0.0" y="0.0" z="0.0" unit="mm" />
+      <constant name="tracker_setback" value="100.0" />
+      <constant name="world_side" value="30000.0" />
+      <constant name="tracking_region_radius" value="1269.0" />
+      <constant name="SolenoidBarrelInnerAirgapThickness" value="110.0" />
+      <constant name="BeamCal_zmax" value="3440.0" />
+      <constant name="EcalBarrel_rmin" value="1270.0" />
+      <constant name="LumiCal_zmax" value="1695.5" />
+      <constant name="ForwardLowZ_zmin" value="3135.0" />
+      <constant name="SolenoidBarrelInnerRadius" value="2591.0" />
+      <constant name="SolenoidCoilOuterZ" value="2693.0" />
+      <constant name="BeamCal_zmin" value="3265.0" />
+      <constant name="SolenoidBarrelOuterCryostatThickness" value="40.0" />
+      <constant name="SolenoidBarrelConductorInnerRadius" value="2731.0" />
+      <constant name="VXD_CF_support" value="0.5" />
+      <constant name="SolenoidEndcapCryostatThickness" value="50.0" />
+      <constant name="SolenoidBarrelOuterCryostatInnerRadius" value="3165.0" />
+      <constant name="SolenoidEndcapAirgapThickness" value="190.0" />
+      <constant name="SolenoidBarrelOuterRadius" value="3392.0" />
+      <constant name="EcalEndcap_zmin" value="1657.0" />
+      <constant name="bp_cone_slope" value="0.04341258741258742" />
+      <constant name="world_y" value="30000.0" />
+      <constant name="crossing_angle" value="0.014" />
+      <constant name="world_z" value="30000.0" />
+      <constant name="ForwardLowZ_thick" value="130.0" />
+      <constant name="SolenoidBarrelQuenchbackThickness" value="50.0" />
+      <constant name="LumiCal_zmin" value="1557.0" />
+      <constant name="world_x" value="30000.0" />
+      <constant name="VXD_CF_sensor" value="0.26" />
+      <constant name="SolenoidBarrelOuterAirgapThickness" value="187.0" />
+      <constant name="SolenoidBarrelOuterZ" value="2933.0" />
+      <constant name="SolenoidBarrelInnerCryostatThickness" value="30.0" />
+      <constant name="SolenoidalFieldRadius" value="2923.0" />
+      <constant name="tracking_region_zmax" value="1556.0" />
+      <constant name="SolenoidBarrelAlConductorThickness" value="384.0" />
+      <position name="SiVertexBarrel_VtxBarrelModuleInner_component0_position" x="0.0" y="0.0" z="-0.12" unit="mm" />
+      <position name="SiVertexBarrel_VtxBarrelModuleInner_component1_position" x="0.0" y="0.0" z="0.075" unit="mm" />
+      <position name="SiVertexBarrel_VtxBarrelModuleInner_component2_position" x="0.0" y="0.0" z="0.15" unit="mm" />
+      <position name="SiVertexBarrel_VtxBarrelModuleInner_component3_position" x="0.0" y="0.0" z="0.225" unit="mm" />
+      <position name="SiVertexBarrel_VtxBarrelModuleOuter_component0_position" x="0.0" y="0.0" z="-0.12" unit="mm" />
+      <position name="SiVertexBarrel_VtxBarrelModuleOuter_component1_position" x="0.0" y="0.0" z="0.075" unit="mm" />
+      <position name="SiVertexBarrel_VtxBarrelModuleOuter_component2_position" x="0.0" y="0.0" z="0.15" unit="mm" />
+      <position name="SiVertexBarrel_VtxBarrelModuleOuter_component3_position" x="0.0" y="0.0" z="0.21" unit="mm" />
+      <position name="SiVertexBarrel_layer1_phi0_z0_position" x="14.537181300986699" y="3.895235528468425" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer1_phi0_z0_rotation" x="1.5707963267948966" y="-1.3089963267948965" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer1_phi1_z0_position" x="9.828778241301087" y="9.82879027568125" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer1_phi1_z0_rotation" x="1.5707963267948966" y="-0.7853975511965978" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer1_phi2_z0_position" x="3.8952177291159953" y="14.537186070308808" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer1_phi2_z0_rotation" x="1.5707963267948966" y="-0.2617987755982991" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer1_phi3_z0_position" x="-3.5975929465588714" y="13.426366782971105" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer1_phi3_z0_rotation" x="1.5707963267948966" y="0.2617999999999996" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer1_phi4_z0_position" x="-10.6419635718707" y="10.64195054184039" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer1_phi4_z0_rotation" x="1.5707963267948966" y="0.7853987755982983" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer1_phi5_z0_position" x="-13.42637118785996" y="3.597576507289863" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer1_phi5_z0_rotation" x="1.5707963267948966" y="1.308997551196597" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer1_phi6_z0_position" x="-14.537181300986703" y="-3.895235528468411" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer1_phi6_z0_rotation" x="1.5707963267948966" y="1.8325963267948957" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer1_phi7_z0_position" x="-9.828778241301096" y="-9.828790275681241" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer1_phi7_z0_rotation" x="1.5707963267948966" y="2.3561951023931944" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer1_phi8_z0_position" x="-3.8952177291160095" y="-14.537186070308804" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer1_phi8_z0_rotation" x="1.5707963267948966" y="2.879793877991493" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer1_phi9_z0_position" x="3.5975929465588634" y="-13.426366782971106" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer1_phi9_z0_rotation" x="1.5707963267948966" y="3.4033926535897923" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer1_phi10_z0_position" x="10.641963571870699" y="-10.641950541840393" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer1_phi10_z0_rotation" x="1.5707963267948966" y="3.9269914291880914" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer1_phi11_z0_position" x="13.426371187859962" y="-3.5975765072898582" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer1_phi11_z0_rotation" x="1.5707963267948966" y="4.450590204786391" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer2_phi0_z0_position" x="22.24526813034709" y="5.960616227284241" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer2_phi0_z0_rotation" x="1.5707963267948966" y="-1.3089963267948965" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer2_phi1_z0_position" x="15.485629027661426" y="15.485647988303553" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer2_phi1_z0_rotation" x="1.5707963267948966" y="-0.7853975511965978" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer2_phi2_z0_position" x="5.960588990135639" y="22.24527542851906" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer2_phi2_z0_rotation" x="1.5707963267948966" y="-0.2617987755982991" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer2_phi3_z0_position" x="-5.668150038103546" y="21.15377212568829" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer2_phi3_z0_rotation" x="1.5707963267948966" y="0.2617999999999996" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer2_phi4_z0_position" x="-16.284679140211445" y="16.28465920123483" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer2_phi4_z0_rotation" x="1.5707963267948966" y="0.7853987755982983" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer2_phi5_z0_position" x="-21.153779065764976" y="5.668124137384749" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer2_phi5_z0_rotation" x="1.5707963267948966" y="1.308997551196597" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer2_phi6_z0_position" x="-22.245268130347092" y="-5.960616227284219" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer2_phi6_z0_rotation" x="1.5707963267948966" y="1.8325963267948957" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer2_phi7_z0_position" x="-15.485629027661442" y="-15.485647988303539" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer2_phi7_z0_rotation" x="1.5707963267948966" y="2.3561951023931944" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer2_phi8_z0_position" x="-5.960588990135661" y="-22.245275428519054" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer2_phi8_z0_rotation" x="1.5707963267948966" y="2.879793877991493" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer2_phi9_z0_position" x="5.6681500381035335" y="-21.153772125688292" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer2_phi9_z0_rotation" x="1.5707963267948966" y="3.4033926535897923" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer2_phi10_z0_position" x="16.28467914021144" y="-16.284659201234835" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer2_phi10_z0_rotation" x="1.5707963267948966" y="3.9269914291880914" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer2_phi11_z0_position" x="21.15377906576498" y="-5.6681241373847415" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer2_phi11_z0_rotation" x="1.5707963267948966" y="4.450590204786391" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer3_phi0_z0_position" x="35.79" y="0.0" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer3_phi0_z0_rotation" x="1.5707963267948966" y="-1.5707963267948966" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer3_phi1_z0_position" x="32.795272465428205" y="11.936503002065837" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer3_phi1_z0_rotation" x="1.5707963267948966" y="-1.2217304763960306" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer3_phi2_z0_position" x="27.416730619228222" y="23.00536855068124" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer3_phi2_z0_rotation" x="1.5707963267948966" y="-0.8726646259971648" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer3_phi3_z0_position" x="17.450000000000003" y="30.224286592076904" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer3_phi3_z0_rotation" x="1.5707963267948966" y="-0.5235987755982989" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer3_phi4_z0_position" x="6.21486827869944" y="35.24626948030692" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer3_phi4_z0_rotation" x="1.5707963267948966" y="-0.17453292519943298" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer3_phi5_z0_position" x="-6.060321400575868" y="34.36979058012606" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer3_phi5_z0_rotation" x="1.5707963267948966" y="0.17453292519943298" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer3_phi6_z0_position" x="-17.894999999999992" y="30.99504920144506" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer3_phi6_z0_rotation" x="1.5707963267948966" y="0.5235987755982987" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer3_phi7_z0_position" x="-26.73495106485233" y="22.433287578060227" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer3_phi7_z0_rotation" x="1.5707963267948966" y="0.8726646259971647" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer3_phi8_z0_position" x="-33.63159889792766" y="12.240900929625688" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer3_phi8_z0_rotation" x="1.5707963267948966" y="1.2217304763960306" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer3_phi9_z0_position" x="-34.9" y="4.274017329024262E-15" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer3_phi9_z0_rotation" x="1.5707963267948966" y="1.5707963267948966" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer3_phi10_z0_position" x="-33.63159889792766" y="-12.240900929625681" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer3_phi10_z0_rotation" x="1.5707963267948966" y="1.9198621771937625" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer3_phi11_z0_position" x="-26.734951064852336" y="-22.43328757806022" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer3_phi11_z0_rotation" x="1.5707963267948966" y="2.2689280275926285" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer3_phi12_z0_position" x="-17.895000000000014" y="-30.995049201445052" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer3_phi12_z0_rotation" x="1.5707963267948966" y="2.617993877991494" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer3_phi13_z0_position" x="-6.060321400575899" y="-34.36979058012606" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer3_phi13_z0_rotation" x="1.5707963267948966" y="2.9670597283903595" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer3_phi14_z0_position" x="6.214868278699392" y="-35.246269480306935" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer3_phi14_z0_rotation" x="1.5707963267948966" y="3.316125578789225" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer3_phi15_z0_position" x="17.44999999999995" y="-30.224286592076936" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer3_phi15_z0_rotation" x="1.5707963267948966" y="3.6651914291880905" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer3_phi16_z0_position" x="27.416730619228176" y="-23.0053685506813" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer3_phi16_z0_rotation" x="1.5707963267948966" y="4.014257279586956" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer3_phi17_z0_position" x="32.79527246542817" y="-11.93650300206592" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer3_phi17_z0_rotation" x="1.5707963267948966" y="4.3633231299858215" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer4_phi0_z0_position" x="47.093629017432946" y="6.2000085458326115" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer4_phi0_z0_rotation" x="1.5707963267948966" y="-1.4398963267948965" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer4_phi1_z0_position" x="44.632614556605965" y="18.48745027962065" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer4_phi1_z0_rotation" x="1.5707963267948966" y="-1.1780969389957472" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer4_phi2_z0_position" x="37.684274812580625" y="28.916179413088123" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer4_phi2_z0_rotation" x="1.5707963267948966" y="-0.9162975511965978" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer4_phi3_z0_position" x="29.409252903529577" y="38.32690887165618" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer4_phi3_z0_rotation" x="1.5707963267948966" y="-0.6544981633974485" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer4_phi4_z0_position" x="18.17744960434483" y="43.88428335841322" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer4_phi4_z0_rotation" x="1.5707963267948966" y="-0.39269877559829913" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer4_phi5_z0_position" x="6.305705684949793" y="47.896703183150215" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer4_phi5_z0_rotation" x="1.5707963267948966" y="-0.13089938779914978" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer4_phi6_z0_position" x="-6.200008545832589" y="47.09362901743295" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer4_phi6_z0_rotation" x="1.5707963267948966" y="0.13089999999999957" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer4_phi7_z0_position" x="-18.487450279620624" y="44.63261455660597" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer4_phi7_z0_rotation" x="1.5707963267948966" y="0.3926993877991489" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer4_phi8_z0_position" x="-28.91617941308811" y="37.68427481258064" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer4_phi8_z0_rotation" x="1.5707963267948966" y="0.6544987755982983" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer4_phi9_z0_position" x="-38.32690887165617" y="29.409252903529588" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer4_phi9_z0_rotation" x="1.5707963267948966" y="0.9162981633974479" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer4_phi10_z0_position" x="-43.88428335841322" y="18.177449604344833" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer4_phi10_z0_rotation" x="1.5707963267948966" y="1.1780975511965974" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer4_phi11_z0_position" x="-47.896703183150215" y="6.3057056849497855" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer4_phi11_z0_rotation" x="1.5707963267948966" y="1.439896938995747" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer4_phi12_z0_position" x="-47.09362901743295" y="-6.200008545832606" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer4_phi12_z0_rotation" x="1.5707963267948966" y="1.7016963267948966" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer4_phi13_z0_position" x="-44.632614556605965" y="-18.487450279620653" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer4_phi13_z0_rotation" x="1.5707963267948966" y="1.9634957145940461" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer4_phi14_z0_position" x="-37.68427481258062" y="-28.91617941308814" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer4_phi14_z0_rotation" x="1.5707963267948966" y="2.2252951023931957" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer4_phi15_z0_position" x="-29.409252903529556" y="-38.326908871656194" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer4_phi15_z0_rotation" x="1.5707963267948966" y="2.4870944901923453" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer4_phi16_z0_position" x="-18.177449604344815" y="-43.88428335841323" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer4_phi16_z0_rotation" x="1.5707963267948966" y="2.7488938779914944" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer4_phi17_z0_position" x="-6.305705684949789" y="-47.896703183150215" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer4_phi17_z0_rotation" x="1.5707963267948966" y="3.0106932657906436" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer4_phi18_z0_position" x="6.200008545832582" y="-47.09362901743295" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer4_phi18_z0_rotation" x="1.5707963267948966" y="3.2724926535897927" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer4_phi19_z0_position" x="18.48745027962061" y="-44.63261455660598" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer4_phi19_z0_rotation" x="1.5707963267948966" y="3.534292041388942" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer4_phi20_z0_position" x="28.916179413088088" y="-37.68427481258066" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer4_phi20_z0_rotation" x="1.5707963267948966" y="3.796091429188091" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer4_phi21_z0_position" x="38.326908871656144" y="-29.409252903529623" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer4_phi21_z0_rotation" x="1.5707963267948966" y="4.05789081698724" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer4_phi22_z0_position" x="43.8842833584132" y="-18.177449604344897" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer4_phi22_z0_rotation" x="1.5707963267948966" y="4.319690204786389" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer4_phi23_z0_position" x="47.89670318315021" y="-6.305705684949876" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer4_phi23_z0_rotation" x="1.5707963267948966" y="4.581489592585538" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer5_phi0_z0_position" x="59.9" y="0.0" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer5_phi0_z0_rotation" x="1.5707963267948966" y="-1.5707963267948966" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer5_phi1_z0_position" x="59.34421493651999" y="12.614002281913457" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer5_phi1_z0_rotation" x="1.5707963267948966" y="-1.361356816555577" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer5_phi2_z0_position" x="54.72137291279179" y="24.36352492024043" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer5_phi2_z0_rotation" x="1.5707963267948966" y="-1.1519173063162575" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer5_phi3_z0_position" x="49.08306104872806" y="35.66093125658435" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer5_phi3_z0_rotation" x="1.5707963267948966" y="-0.9424777960769379" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer5_phi4_z0_position" x="40.08092332089561" y="44.514375046095914" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer5_phi4_z0_rotation" x="1.5707963267948966" y="-0.7330382858376184" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer5_phi5_z0_position" x="30.335000000000008" y="52.54176124760189" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer5_phi5_z0_rotation" x="1.5707963267948966" y="-0.5235987755982989" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer5_phi6_z0_position" x="18.51011796305935" y="56.968285326079695" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer5_phi6_z0_rotation" x="1.5707963267948966" y="-0.3141592653589793" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer5_phi7_z0_position" x="6.341741866448535" y="60.33764339199314" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer5_phi7_z0_rotation" x="1.5707963267948966" y="-0.1047197551196597" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer5_phi8_z0_position" x="-6.2612549497324475" y="59.571861532559566" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer5_phi8_z0_rotation" x="1.5707963267948966" y="0.10471975511965992" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer5_phi9_z0_position" x="-18.74806104872807" y="57.70059884362696" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer5_phi9_z0_rotation" x="1.5707963267948966" y="0.31415926535897953" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer5_phi10_z0_position" x="-29.950000000000014" y="51.87492168668787" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer5_phi10_z0_rotation" x="1.5707963267948966" y="0.5235987755982991" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer5_phi11_z0_position" x="-40.59615388779193" y="45.08659656171351" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer5_phi11_z0_rotation" x="1.5707963267948966" y="0.7330382858376185" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer5_phi12_z0_position" x="-48.460117963059346" y="35.208336612319144" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer5_phi12_z0_rotation" x="1.5707963267948966" y="0.9424777960769379" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer5_phi13_z0_position" x="-55.42480291517659" y="24.676712135408813" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer5_phi13_z0_rotation" x="1.5707963267948966" y="1.1519173063162573" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer5_phi14_z0_position" x="-58.59104128395495" y="12.453910279983807" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer5_phi14_z0_rotation" x="1.5707963267948966" y="1.3613568165555767" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer5_phi15_z0_position" x="-60.67" y="3.437282449203029E-14" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer5_phi15_z0_rotation" x="1.5707963267948966" y="1.5707963267948961" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer5_phi16_z0_position" x="-58.591041283954965" y="-12.453910279983742" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer5_phi16_z0_rotation" x="1.5707963267948966" y="1.7802358370342155" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer5_phi17_z0_position" x="-55.42480291517661" y="-24.67671213540875" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer5_phi17_z0_rotation" x="1.5707963267948966" y="1.989675347273535" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer5_phi18_z0_position" x="-48.46011796305938" y="-35.20833661231909" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer5_phi18_z0_rotation" x="1.5707963267948966" y="2.1991148575128543" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer5_phi19_z0_position" x="-40.596153887791985" y="-45.086596561713456" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer5_phi19_z0_rotation" x="1.5707963267948966" y="2.4085543677521737" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer5_phi20_z0_position" x="-29.950000000000074" y="-51.874921686687834" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer5_phi20_z0_rotation" x="1.5707963267948966" y="2.617993877991493" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer5_phi21_z0_position" x="-18.748061048728122" y="-57.70059884362695" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer5_phi21_z0_rotation" x="1.5707963267948966" y="2.827433388230813" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer5_phi22_z0_position" x="-6.261254949732488" y="-59.571861532559566" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer5_phi22_z0_rotation" x="1.5707963267948966" y="3.0368728984701328" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer5_phi23_z0_position" x="6.341741866448507" y="-60.33764339199315" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer5_phi23_z0_rotation" x="1.5707963267948966" y="3.2463124087094526" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer5_phi24_z0_position" x="18.51011796305934" y="-56.9682853260797" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer5_phi24_z0_rotation" x="1.5707963267948966" y="3.4557519189487724" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer5_phi25_z0_position" x="30.335000000000008" y="-52.54176124760189" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer5_phi25_z0_rotation" x="1.5707963267948966" y="3.6651914291880923" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer5_phi26_z0_position" x="40.08092332089562" y="-44.5143750460959" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer5_phi26_z0_rotation" x="1.5707963267948966" y="3.874630939427412" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer5_phi27_z0_position" x="49.083061048728084" y="-35.66093125658431" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer5_phi27_z0_rotation" x="1.5707963267948966" y="4.084070449666732" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer5_phi28_z0_position" x="54.721372912791814" y="-24.36352492024038" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer5_phi28_z0_rotation" x="1.5707963267948966" y="4.293509959906052" z="0.0" unit="radian" />
+      <position name="SiVertexBarrel_layer5_phi29_z0_position" x="59.344214936520004" y="-12.614002281913386" z="-0.0" unit="mm" />
+      <rotation name="SiVertexBarrel_layer5_phi29_z0_rotation" x="1.5707963267948966" y="4.502949470145372" z="0.0" unit="radian" />
+      <position name="SiVertexEndcapModule1Volume_component0_position" x="0.0" y="-0.04" z="0.0" unit="mm" />
+      <rotation name="SiVertexEndcapModule1Volume_component0_rotation" x="0.0" y="0.0" z="0.0" unit="radian" />
+      <position name="SiVertexEndcapModule1Volume_component1_position" x="0.0" y="0.010000000000000002" z="0.0" unit="mm" />
+      <rotation name="SiVertexEndcapModule1Volume_component1_rotation" x="0.0" y="0.0" z="0.0" unit="radian" />
+      <position name="SiVertexEndcapModule2Volume_component0_position" x="0.0" y="-0.04" z="0.0" unit="mm" />
+      <rotation name="SiVertexEndcapModule2Volume_component0_rotation" x="0.0" y="0.0" z="0.0" unit="radian" />
+      <position name="SiVertexEndcapModule2Volume_component1_position" x="0.0" y="0.010000000000000002" z="0.0" unit="mm" />
+      <rotation name="SiVertexEndcapModule2Volume_component1_rotation" x="0.0" y="0.0" z="0.0" unit="radian" />
+      <position name="SiVertexEndcapModule3Volume_component0_position" x="0.0" y="-0.04" z="0.0" unit="mm" />
+      <rotation name="SiVertexEndcapModule3Volume_component0_rotation" x="0.0" y="0.0" z="0.0" unit="radian" />
+      <position name="SiVertexEndcapModule3Volume_component1_position" x="0.0" y="0.010000000000000002" z="0.0" unit="mm" />
+      <rotation name="SiVertexEndcapModule3Volume_component1_rotation" x="0.0" y="0.0" z="0.0" unit="radian" />
+      <position name="SiVertexEndcapModule4Volume_component0_position" x="0.0" y="-0.04" z="0.0" unit="mm" />
+      <rotation name="SiVertexEndcapModule4Volume_component0_rotation" x="0.0" y="0.0" z="0.0" unit="radian" />
+      <position name="SiVertexEndcapModule4Volume_component1_position" x="0.0" y="0.010000000000000002" z="0.0" unit="mm" />
+      <rotation name="SiVertexEndcapModule4Volume_component1_rotation" x="0.0" y="0.0" z="0.0" unit="radian" />
+      <position name="SiVertexEndcap_layer1_module0_position" x="45.0" y="0.0" z="76.011" unit="mm" />
+      <rotation name="SiVertexEndcap_layer1_module0_rotation" x="-1.5707963267948966" y="-1.5707963267948966" z="0.0" unit="radian" />
+      <position name="SiVertexEndcap_layer1_module0_reflect_position" x="45.0" y="0.0" z="-76.011" unit="mm" />
+      <rotation name="SiVertexEndcap_layer1_module0_reflect_rotation" x="-1.5707963267948966" y="-1.5707963267948966" z="3.141592653589793" unit="radian" />
+      <position name="SiVertexEndcap_layer1_module1_position" x="41.5745789630079" y="17.22075445642904" z="75.989" unit="mm" />
+      <rotation name="SiVertexEndcap_layer1_module1_rotation" x="-1.5707963267948966" y="-1.9634954084936207" z="0.0" unit="radian" />
+      <position name="SiVertexEndcap_layer1_module1_reflect_position" x="41.5745789630079" y="17.22075445642904" z="-75.989" unit="mm" />
+      <rotation name="SiVertexEndcap_layer1_module1_reflect_rotation" x="-1.5707963267948966" y="-1.9634954084936207" z="3.141592653589793" unit="radian" />
+      <position name="SiVertexEndcap_layer1_module2_position" x="31.81980515339464" y="31.819805153394636" z="76.011" unit="mm" />
+      <rotation name="SiVertexEndcap_layer1_module2_rotation" x="-1.5707963267948966" y="-2.356194490192345" z="0.0" unit="radian" />
+      <position name="SiVertexEndcap_layer1_module2_reflect_position" x="31.81980515339464" y="31.819805153394636" z="-76.011" unit="mm" />
+      <rotation name="SiVertexEndcap_layer1_module2_reflect_rotation" x="-1.5707963267948966" y="-2.356194490192345" z="3.141592653589793" unit="radian" />
+      <position name="SiVertexEndcap_layer1_module3_position" x="17.22075445642904" y="41.5745789630079" z="75.989" unit="mm" />
+      <rotation name="SiVertexEndcap_layer1_module3_rotation" x="-1.5707963267948966" y="-2.748893571891069" z="0.0" unit="radian" />
+      <position name="SiVertexEndcap_layer1_module3_reflect_position" x="17.22075445642904" y="41.5745789630079" z="-75.989" unit="mm" />
+      <rotation name="SiVertexEndcap_layer1_module3_reflect_rotation" x="-1.5707963267948966" y="-2.748893571891069" z="3.141592653589793" unit="radian" />
+      <position name="SiVertexEndcap_layer1_module4_position" x="2.7554552980815448E-15" y="45.0" z="76.011" unit="mm" />
+      <rotation name="SiVertexEndcap_layer1_module4_rotation" x="-1.5707963267948966" y="-3.141592653589793" z="0.0" unit="radian" />
+      <position name="SiVertexEndcap_layer1_module4_reflect_position" x="2.7554552980815448E-15" y="45.0" z="-76.011" unit="mm" />
+      <rotation name="SiVertexEndcap_layer1_module4_reflect_rotation" x="-1.5707963267948966" y="-3.141592653589793" z="3.141592653589793" unit="radian" />
+      <position name="SiVertexEndcap_layer1_module5_position" x="-17.220754456429038" y="41.5745789630079" z="75.989" unit="mm" />
+      <rotation name="SiVertexEndcap_layer1_module5_rotation" x="-1.5707963267948966" y="-3.5342917352885173" z="0.0" unit="radian" />
+      <position name="SiVertexEndcap_layer1_module5_reflect_position" x="-17.220754456429038" y="41.5745789630079" z="-75.989" unit="mm" />
+      <rotation name="SiVertexEndcap_layer1_module5_reflect_rotation" x="-1.5707963267948966" y="-3.5342917352885173" z="3.141592653589793" unit="radian" />
+      <position name="SiVertexEndcap_layer1_module6_position" x="-31.819805153394636" y="31.81980515339464" z="76.011" unit="mm" />
+      <rotation name="SiVertexEndcap_layer1_module6_rotation" x="-1.5707963267948966" y="-3.9269908169872414" z="0.0" unit="radian" />
+      <position name="SiVertexEndcap_layer1_module6_reflect_position" x="-31.819805153394636" y="31.81980515339464" z="-76.011" unit="mm" />
+      <rotation name="SiVertexEndcap_layer1_module6_reflect_rotation" x="-1.5707963267948966" y="-3.9269908169872414" z="3.141592653589793" unit="radian" />
+      <position name="SiVertexEndcap_layer1_module7_position" x="-41.5745789630079" y="17.220754456429045" z="75.989" unit="mm" />
+      <rotation name="SiVertexEndcap_layer1_module7_rotation" x="-1.5707963267948966" y="-4.319689898685965" z="0.0" unit="radian" />
+      <position name="SiVertexEndcap_layer1_module7_reflect_position" x="-41.5745789630079" y="17.220754456429045" z="-75.989" unit="mm" />
+      <rotation name="SiVertexEndcap_layer1_module7_reflect_rotation" x="-1.5707963267948966" y="-4.319689898685965" z="3.141592653589793" unit="radian" />
+      <position name="SiVertexEndcap_layer1_module8_position" x="-45.0" y="5.5109105961630896E-15" z="76.011" unit="mm" />
+      <rotation name="SiVertexEndcap_layer1_module8_rotation" x="-1.5707963267948966" y="-4.71238898038469" z="0.0" unit="radian" />
+      <position name="SiVertexEndcap_layer1_module8_reflect_position" x="-45.0" y="5.5109105961630896E-15" z="-76.011" unit="mm" />
+      <rotation name="SiVertexEndcap_layer1_module8_reflect_rotation" x="-1.5707963267948966" y="-4.71238898038469" z="3.141592653589793" unit="radian" />
+      <position name="SiVertexEndcap_layer1_module9_position" x="-41.57457896300791" y="-17.220754456429034" z="75.989" unit="mm" />
+      <rotation name="SiVertexEndcap_layer1_module9_rotation" x="-1.5707963267948966" y="-5.105088062083414" z="0.0" unit="radian" />
+      <position name="SiVertexEndcap_layer1_module9_reflect_position" x="-41.57457896300791" y="-17.220754456429034" z="-75.989" unit="mm" />
+      <rotation name="SiVertexEndcap_layer1_module9_reflect_rotation" x="-1.5707963267948966" y="-5.105088062083414" z="3.141592653589793" unit="radian" />
+      <position name="SiVertexEndcap_layer1_module10_position" x="-31.819805153394647" y="-31.819805153394636" z="76.011" unit="mm" />
+      <rotation name="SiVertexEndcap_layer1_module10_rotation" x="-1.5707963267948966" y="-5.497787143782138" z="0.0" unit="radian" />
+      <position name="SiVertexEndcap_layer1_module10_reflect_position" x="-31.819805153394647" y="-31.819805153394636" z="-76.011" unit="mm" />
+      <rotation name="SiVertexEndcap_layer1_module10_reflect_rotation" x="-1.5707963267948966" y="-5.497787143782138" z="3.141592653589793" unit="radian" />
+      <position name="SiVertexEndcap_layer1_module11_position" x="-17.220754456429066" y="-41.574578963007895" z="75.989" unit="mm" />
+      <rotation name="SiVertexEndcap_layer1_module11_rotation" x="-1.5707963267948966" y="-5.890486225480862" z="0.0" unit="radian" />
+      <position name="SiVertexEndcap_layer1_module11_reflect_position" x="-17.220754456429066" y="-41.574578963007895" z="-75.989" unit="mm" />
+      <rotation name="SiVertexEndcap_layer1_module11_reflect_rotation" x="-1.5707963267948966" y="-5.890486225480862" z="3.141592653589793" unit="radian" />
+      <position name="SiVertexEndcap_layer1_module12_position" x="-8.266365894244634E-15" y="-45.0" z="76.011" unit="mm" />
+      <rotation name="SiVertexEndcap_layer1_module12_rotation" x="-1.5707963267948966" y="-6.283185307179586" z="0.0" unit="radian" />
+      <position name="SiVertexEndcap_layer1_module12_reflect_position" x="-8.266365894244634E-15" y="-45.0" z="-76.011" unit="mm" />
+      <rotation name="SiVertexEndcap_layer1_module12_reflect_rotation" x="-1.5707963267948966" y="-6.283185307179586" z="3.141592653589793" unit="radian" />
+      <position name="SiVertexEndcap_layer1_module13_position" x="17.22075445642905" y="-41.5745789630079" z="75.989" unit="mm" />
+      <rotation name="SiVertexEndcap_layer1_module13_rotation" x="-1.5707963267948966" y="-6.675884388878311" z="0.0" unit="radian" />
+      <position name="SiVertexEndcap_layer1_module13_reflect_position" x="17.22075445642905" y="-41.5745789630079" z="-75.989" unit="mm" />
+      <rotation name="SiVertexEndcap_layer1_module13_reflect_rotation" x="-1.5707963267948966" y="-6.675884388878311" z="3.141592653589793" unit="radian" />
+      <position name="SiVertexEndcap_layer1_module14_position" x="31.81980515339466" y="-31.819805153394615" z="76.011" unit="mm" />
+      <rotation name="SiVertexEndcap_layer1_module14_rotation" x="-1.5707963267948966" y="-7.068583470577035" z="0.0" unit="radian" />
+      <position name="SiVertexEndcap_layer1_module14_reflect_position" x="31.81980515339466" y="-31.819805153394615" z="-76.011" unit="mm" />
+      <rotation name="SiVertexEndcap_layer1_module14_reflect_rotation" x="-1.5707963267948966" y="-7.068583470577035" z="3.141592653589793" unit="radian" />
+      <position name="SiVertexEndcap_layer1_module15_position" x="41.57457896300792" y="-17.220754456428992" z="75.989" unit="mm" />
+      <rotation name="SiVertexEndcap_layer1_module15_rotation" x="-1.5707963267948966" y="-7.46128255227576" z="0.0" unit="radian" />
+      <position name="SiVertexEndcap_layer1_module15_reflect_position" x="41.57457896300792" y="-17.220754456428992" z="-75.989" unit="mm" />
+      <rotation name="SiVertexEndcap_layer1_module15_reflect_rotation" x="-1.5707963267948966" y="-7.46128255227576" z="3.141592653589793" unit="radian" />
+      <position name="SiVertexEndcap_layer2_module0_position" x="45.5" y="0.0" z="95.011" unit="mm" />
+      <rotation name="SiVertexEndcap_layer2_module0_rotation" x="-1.5707963267948966" y="-1.5707963267948966" z="0.0" unit="radian" />
+      <position name="SiVertexEndcap_layer2_module0_reflect_position" x="45.5" y="0.0" z="-95.011" unit="mm" />
+      <rotation name="SiVertexEndcap_layer2_module0_reflect_rotation" x="-1.5707963267948966" y="-1.5707963267948966" z="3.141592653589793" unit="radian" />
+      <position name="SiVertexEndcap_layer2_module1_position" x="42.03651872926355" y="17.412096172611584" z="94.989" unit="mm" />
+      <rotation name="SiVertexEndcap_layer2_module1_rotation" x="-1.5707963267948966" y="-1.9634954084936207" z="0.0" unit="radian" />
+      <position name="SiVertexEndcap_layer2_module1_reflect_position" x="42.03651872926355" y="17.412096172611584" z="-94.989" unit="mm" />
+      <rotation name="SiVertexEndcap_layer2_module1_reflect_rotation" x="-1.5707963267948966" y="-1.9634954084936207" z="3.141592653589793" unit="radian" />
+      <position name="SiVertexEndcap_layer2_module2_position" x="32.173358543987916" y="32.17335854398791" z="95.011" unit="mm" />
+      <rotation name="SiVertexEndcap_layer2_module2_rotation" x="-1.5707963267948966" y="-2.356194490192345" z="0.0" unit="radian" />
+      <position name="SiVertexEndcap_layer2_module2_reflect_position" x="32.173358543987916" y="32.17335854398791" z="-95.011" unit="mm" />
+      <rotation name="SiVertexEndcap_layer2_module2_reflect_rotation" x="-1.5707963267948966" y="-2.356194490192345" z="3.141592653589793" unit="radian" />
+      <position name="SiVertexEndcap_layer2_module3_position" x="17.412096172611587" y="42.03651872926355" z="94.989" unit="mm" />
+      <rotation name="SiVertexEndcap_layer2_module3_rotation" x="-1.5707963267948966" y="-2.748893571891069" z="0.0" unit="radian" />
+      <position name="SiVertexEndcap_layer2_module3_reflect_position" x="17.412096172611587" y="42.03651872926355" z="-94.989" unit="mm" />
+      <rotation name="SiVertexEndcap_layer2_module3_reflect_rotation" x="-1.5707963267948966" y="-2.748893571891069" z="3.141592653589793" unit="radian" />
+      <position name="SiVertexEndcap_layer2_module4_position" x="2.7860714680602286E-15" y="45.5" z="95.011" unit="mm" />
+      <rotation name="SiVertexEndcap_layer2_module4_rotation" x="-1.5707963267948966" y="-3.141592653589793" z="0.0" unit="radian" />
+      <position name="SiVertexEndcap_layer2_module4_reflect_position" x="2.7860714680602286E-15" y="45.5" z="-95.011" unit="mm" />
+      <rotation name="SiVertexEndcap_layer2_module4_reflect_rotation" x="-1.5707963267948966" y="-3.141592653589793" z="3.141592653589793" unit="radian" />
+      <position name="SiVertexEndcap_layer2_module5_position" x="-17.412096172611584" y="42.03651872926355" z="94.989" unit="mm" />
+      <rotation name="SiVertexEndcap_layer2_module5_rotation" x="-1.5707963267948966" y="-3.5342917352885173" z="0.0" unit="radian" />
+      <position name="SiVertexEndcap_layer2_module5_reflect_position" x="-17.412096172611584" y="42.03651872926355" z="-94.989" unit="mm" />
+      <rotation name="SiVertexEndcap_layer2_module5_reflect_rotation" x="-1.5707963267948966" y="-3.5342917352885173" z="3.141592653589793" unit="radian" />
+      <position name="SiVertexEndcap_layer2_module6_position" x="-32.17335854398791" y="32.173358543987916" z="95.011" unit="mm" />
+      <rotation name="SiVertexEndcap_layer2_module6_rotation" x="-1.5707963267948966" y="-3.9269908169872414" z="0.0" unit="radian" />
+      <position name="SiVertexEndcap_layer2_module6_reflect_position" x="-32.17335854398791" y="32.173358543987916" z="-95.011" unit="mm" />
+      <rotation name="SiVertexEndcap_layer2_module6_reflect_rotation" x="-1.5707963267948966" y="-3.9269908169872414" z="3.141592653589793" unit="radian" />
+      <position name="SiVertexEndcap_layer2_module7_position" x="-42.03651872926355" y="17.41209617261159" z="94.989" unit="mm" />
+      <rotation name="SiVertexEndcap_layer2_module7_rotation" x="-1.5707963267948966" y="-4.319689898685965" z="0.0" unit="radian" />
+      <position name="SiVertexEndcap_layer2_module7_reflect_position" x="-42.03651872926355" y="17.41209617261159" z="-94.989" unit="mm" />
+      <rotation name="SiVertexEndcap_layer2_module7_reflect_rotation" x="-1.5707963267948966" y="-4.319689898685965" z="3.141592653589793" unit="radian" />
+      <position name="SiVertexEndcap_layer2_module8_position" x="-45.5" y="5.572142936120457E-15" z="95.011" unit="mm" />
+      <rotation name="SiVertexEndcap_layer2_module8_rotation" x="-1.5707963267948966" y="-4.71238898038469" z="0.0" unit="radian" />
+      <position name="SiVertexEndcap_layer2_module8_reflect_position" x="-45.5" y="5.572142936120457E-15" z="-95.011" unit="mm" />
+      <rotation name="SiVertexEndcap_layer2_module8_reflect_rotation" x="-1.5707963267948966" y="-4.71238898038469" z="3.141592653589793" unit="radian" />
+      <position name="SiVertexEndcap_layer2_module9_position" x="-42.03651872926355" y="-17.41209617261158" z="94.989" unit="mm" />
+      <rotation name="SiVertexEndcap_layer2_module9_rotation" x="-1.5707963267948966" y="-5.105088062083414" z="0.0" unit="radian" />
+      <position name="SiVertexEndcap_layer2_module9_reflect_position" x="-42.03651872926355" y="-17.41209617261158" z="-94.989" unit="mm" />
+      <rotation name="SiVertexEndcap_layer2_module9_reflect_rotation" x="-1.5707963267948966" y="-5.105088062083414" z="3.141592653589793" unit="radian" />
+      <position name="SiVertexEndcap_layer2_module10_position" x="-32.173358543987916" y="-32.17335854398791" z="95.011" unit="mm" />
+      <rotation name="SiVertexEndcap_layer2_module10_rotation" x="-1.5707963267948966" y="-5.497787143782138" z="0.0" unit="radian" />
+      <position name="SiVertexEndcap_layer2_module10_reflect_position" x="-32.173358543987916" y="-32.17335854398791" z="-95.011" unit="mm" />
+      <rotation name="SiVertexEndcap_layer2_module10_reflect_rotation" x="-1.5707963267948966" y="-5.497787143782138" z="3.141592653589793" unit="radian" />
+      <position name="SiVertexEndcap_layer2_module11_position" x="-17.41209617261161" y="-42.036518729263534" z="94.989" unit="mm" />
+      <rotation name="SiVertexEndcap_layer2_module11_rotation" x="-1.5707963267948966" y="-5.890486225480862" z="0.0" unit="radian" />
+      <position name="SiVertexEndcap_layer2_module11_reflect_position" x="-17.41209617261161" y="-42.036518729263534" z="-94.989" unit="mm" />
+      <rotation name="SiVertexEndcap_layer2_module11_reflect_rotation" x="-1.5707963267948966" y="-5.890486225480862" z="3.141592653589793" unit="radian" />
+      <position name="SiVertexEndcap_layer2_module12_position" x="-8.358214404180685E-15" y="-45.5" z="95.011" unit="mm" />
+      <rotation name="SiVertexEndcap_layer2_module12_rotation" x="-1.5707963267948966" y="-6.283185307179586" z="0.0" unit="radian" />
+      <position name="SiVertexEndcap_layer2_module12_reflect_position" x="-8.358214404180685E-15" y="-45.5" z="-95.011" unit="mm" />
+      <rotation name="SiVertexEndcap_layer2_module12_reflect_rotation" x="-1.5707963267948966" y="-6.283185307179586" z="3.141592653589793" unit="radian" />
+      <position name="SiVertexEndcap_layer2_module13_position" x="17.412096172611594" y="-42.03651872926354" z="94.989" unit="mm" />
+      <rotation name="SiVertexEndcap_layer2_module13_rotation" x="-1.5707963267948966" y="-6.675884388878311" z="0.0" unit="radian" />
+      <position name="SiVertexEndcap_layer2_module13_reflect_position" x="17.412096172611594" y="-42.03651872926354" z="-94.989" unit="mm" />
+      <rotation name="SiVertexEndcap_layer2_module13_reflect_rotation" x="-1.5707963267948966" y="-6.675884388878311" z="3.141592653589793" unit="radian" />
+      <position name="SiVertexEndcap_layer2_module14_position" x="32.17335854398794" y="-32.17335854398789" z="95.011" unit="mm" />
+      <rotation name="SiVertexEndcap_layer2_module14_rotation" x="-1.5707963267948966" y="-7.068583470577035" z="0.0" unit="radian" />
+      <position name="SiVertexEndcap_layer2_module14_reflect_position" x="32.17335854398794" y="-32.17335854398789" z="-95.011" unit="mm" />
+      <rotation name="SiVertexEndcap_layer2_module14_reflect_rotation" x="-1.5707963267948966" y="-7.068583470577035" z="3.141592653589793" unit="radian" />
+      <position name="SiVertexEndcap_layer2_module15_position" x="42.03651872926357" y="-17.412096172611538" z="94.989" unit="mm" />
+      <rotation name="SiVertexEndcap_layer2_module15_rotation" x="-1.5707963267948966" y="-7.46128255227576" z="0.0" unit="radian" />
+      <position name="SiVertexEndcap_layer2_module15_reflect_position" x="42.03651872926357" y="-17.412096172611538" z="-94.989" unit="mm" />
+      <rotation name="SiVertexEndcap_layer2_module15_reflect_rotation" x="-1.5707963267948966" y="-7.46128255227576" z="3.141592653589793" unit="radian" />
+      <position name="SiVertexEndcap_layer3_module0_position" x="46.5" y="0.0" z="125.011" unit="mm" />
+      <rotation name="SiVertexEndcap_layer3_module0_rotation" x="-1.5707963267948966" y="-1.5707963267948966" z="0.0" unit="radian" />
+      <position name="SiVertexEndcap_layer3_module0_reflect_position" x="46.5" y="0.0" z="-125.011" unit="mm" />
+      <rotation name="SiVertexEndcap_layer3_module0_reflect_rotation" x="-1.5707963267948966" y="-1.5707963267948966" z="3.141592653589793" unit="radian" />
+      <position name="SiVertexEndcap_layer3_module1_position" x="42.960398261774834" y="17.794779604976675" z="124.989" unit="mm" />
+      <rotation name="SiVertexEndcap_layer3_module1_rotation" x="-1.5707963267948966" y="-1.9634954084936207" z="0.0" unit="radian" />
+      <position name="SiVertexEndcap_layer3_module1_reflect_position" x="42.960398261774834" y="17.794779604976675" z="-124.989" unit="mm" />
+      <rotation name="SiVertexEndcap_layer3_module1_reflect_rotation" x="-1.5707963267948966" y="-1.9634954084936207" z="3.141592653589793" unit="radian" />
+      <position name="SiVertexEndcap_layer3_module2_position" x="32.88046532517446" y="32.880465325174455" z="125.011" unit="mm" />
+      <rotation name="SiVertexEndcap_layer3_module2_rotation" x="-1.5707963267948966" y="-2.356194490192345" z="0.0" unit="radian" />
+      <position name="SiVertexEndcap_layer3_module2_reflect_position" x="32.88046532517446" y="32.880465325174455" z="-125.011" unit="mm" />
+      <rotation name="SiVertexEndcap_layer3_module2_reflect_rotation" x="-1.5707963267948966" y="-2.356194490192345" z="3.141592653589793" unit="radian" />
+      <position name="SiVertexEndcap_layer3_module3_position" x="17.79477960497668" y="42.960398261774834" z="124.989" unit="mm" />
+      <rotation name="SiVertexEndcap_layer3_module3_rotation" x="-1.5707963267948966" y="-2.748893571891069" z="0.0" unit="radian" />
+      <position name="SiVertexEndcap_layer3_module3_reflect_position" x="17.79477960497668" y="42.960398261774834" z="-124.989" unit="mm" />
+      <rotation name="SiVertexEndcap_layer3_module3_reflect_rotation" x="-1.5707963267948966" y="-2.748893571891069" z="3.141592653589793" unit="radian" />
+      <position name="SiVertexEndcap_layer3_module4_position" x="2.847303808017596E-15" y="46.5" z="125.011" unit="mm" />
+      <rotation name="SiVertexEndcap_layer3_module4_rotation" x="-1.5707963267948966" y="-3.141592653589793" z="0.0" unit="radian" />
+      <position name="SiVertexEndcap_layer3_module4_reflect_position" x="2.847303808017596E-15" y="46.5" z="-125.011" unit="mm" />
+      <rotation name="SiVertexEndcap_layer3_module4_reflect_rotation" x="-1.5707963267948966" y="-3.141592653589793" z="3.141592653589793" unit="radian" />
+      <position name="SiVertexEndcap_layer3_module5_position" x="-17.79477960497667" y="42.960398261774834" z="124.989" unit="mm" />
+      <rotation name="SiVertexEndcap_layer3_module5_rotation" x="-1.5707963267948966" y="-3.5342917352885173" z="0.0" unit="radian" />
+      <position name="SiVertexEndcap_layer3_module5_reflect_position" x="-17.79477960497667" y="42.960398261774834" z="-124.989" unit="mm" />
+      <rotation name="SiVertexEndcap_layer3_module5_reflect_rotation" x="-1.5707963267948966" y="-3.5342917352885173" z="3.141592653589793" unit="radian" />
+      <position name="SiVertexEndcap_layer3_module6_position" x="-32.880465325174455" y="32.88046532517446" z="125.011" unit="mm" />
+      <rotation name="SiVertexEndcap_layer3_module6_rotation" x="-1.5707963267948966" y="-3.9269908169872414" z="0.0" unit="radian" />
+      <position name="SiVertexEndcap_layer3_module6_reflect_position" x="-32.880465325174455" y="32.88046532517446" z="-125.011" unit="mm" />
+      <rotation name="SiVertexEndcap_layer3_module6_reflect_rotation" x="-1.5707963267948966" y="-3.9269908169872414" z="3.141592653589793" unit="radian" />
+      <position name="SiVertexEndcap_layer3_module7_position" x="-42.960398261774834" y="17.79477960497668" z="124.989" unit="mm" />
+      <rotation name="SiVertexEndcap_layer3_module7_rotation" x="-1.5707963267948966" y="-4.319689898685965" z="0.0" unit="radian" />
+      <position name="SiVertexEndcap_layer3_module7_reflect_position" x="-42.960398261774834" y="17.79477960497668" z="-124.989" unit="mm" />
+      <rotation name="SiVertexEndcap_layer3_module7_reflect_rotation" x="-1.5707963267948966" y="-4.319689898685965" z="3.141592653589793" unit="radian" />
+      <position name="SiVertexEndcap_layer3_module8_position" x="-46.5" y="5.694607616035192E-15" z="125.011" unit="mm" />
+      <rotation name="SiVertexEndcap_layer3_module8_rotation" x="-1.5707963267948966" y="-4.71238898038469" z="0.0" unit="radian" />
+      <position name="SiVertexEndcap_layer3_module8_reflect_position" x="-46.5" y="5.694607616035192E-15" z="-125.011" unit="mm" />
+      <rotation name="SiVertexEndcap_layer3_module8_reflect_rotation" x="-1.5707963267948966" y="-4.71238898038469" z="3.141592653589793" unit="radian" />
+      <position name="SiVertexEndcap_layer3_module9_position" x="-42.96039826177484" y="-17.794779604976668" z="124.989" unit="mm" />
+      <rotation name="SiVertexEndcap_layer3_module9_rotation" x="-1.5707963267948966" y="-5.105088062083414" z="0.0" unit="radian" />
+      <position name="SiVertexEndcap_layer3_module9_reflect_position" x="-42.96039826177484" y="-17.794779604976668" z="-124.989" unit="mm" />
+      <rotation name="SiVertexEndcap_layer3_module9_reflect_rotation" x="-1.5707963267948966" y="-5.105088062083414" z="3.141592653589793" unit="radian" />
+      <position name="SiVertexEndcap_layer3_module10_position" x="-32.88046532517447" y="-32.880465325174455" z="125.011" unit="mm" />
+      <rotation name="SiVertexEndcap_layer3_module10_rotation" x="-1.5707963267948966" y="-5.497787143782138" z="0.0" unit="radian" />
+      <position name="SiVertexEndcap_layer3_module10_reflect_position" x="-32.88046532517447" y="-32.880465325174455" z="-125.011" unit="mm" />
+      <rotation name="SiVertexEndcap_layer3_module10_reflect_rotation" x="-1.5707963267948966" y="-5.497787143782138" z="3.141592653589793" unit="radian" />
+      <position name="SiVertexEndcap_layer3_module11_position" x="-17.7947796049767" y="-42.96039826177482" z="124.989" unit="mm" />
+      <rotation name="SiVertexEndcap_layer3_module11_rotation" x="-1.5707963267948966" y="-5.890486225480862" z="0.0" unit="radian" />
+      <position name="SiVertexEndcap_layer3_module11_reflect_position" x="-17.7947796049767" y="-42.96039826177482" z="-124.989" unit="mm" />
+      <rotation name="SiVertexEndcap_layer3_module11_reflect_rotation" x="-1.5707963267948966" y="-5.890486225480862" z="3.141592653589793" unit="radian" />
+      <position name="SiVertexEndcap_layer3_module12_position" x="-8.541911424052788E-15" y="-46.5" z="125.011" unit="mm" />
+      <rotation name="SiVertexEndcap_layer3_module12_rotation" x="-1.5707963267948966" y="-6.283185307179586" z="0.0" unit="radian" />
+      <position name="SiVertexEndcap_layer3_module12_reflect_position" x="-8.541911424052788E-15" y="-46.5" z="-125.011" unit="mm" />
+      <rotation name="SiVertexEndcap_layer3_module12_reflect_rotation" x="-1.5707963267948966" y="-6.283185307179586" z="3.141592653589793" unit="radian" />
+      <position name="SiVertexEndcap_layer3_module13_position" x="17.794779604976686" y="-42.96039826177483" z="124.989" unit="mm" />
+      <rotation name="SiVertexEndcap_layer3_module13_rotation" x="-1.5707963267948966" y="-6.675884388878311" z="0.0" unit="radian" />
+      <position name="SiVertexEndcap_layer3_module13_reflect_position" x="17.794779604976686" y="-42.96039826177483" z="-124.989" unit="mm" />
+      <rotation name="SiVertexEndcap_layer3_module13_reflect_rotation" x="-1.5707963267948966" y="-6.675884388878311" z="3.141592653589793" unit="radian" />
+      <position name="SiVertexEndcap_layer3_module14_position" x="32.880465325174484" y="-32.880465325174434" z="125.011" unit="mm" />
+      <rotation name="SiVertexEndcap_layer3_module14_rotation" x="-1.5707963267948966" y="-7.068583470577035" z="0.0" unit="radian" />
+      <position name="SiVertexEndcap_layer3_module14_reflect_position" x="32.880465325174484" y="-32.880465325174434" z="-125.011" unit="mm" />
+      <rotation name="SiVertexEndcap_layer3_module14_reflect_rotation" x="-1.5707963267948966" y="-7.068583470577035" z="3.141592653589793" unit="radian" />
+      <position name="SiVertexEndcap_layer3_module15_position" x="42.960398261774856" y="-17.794779604976625" z="124.989" unit="mm" />
+      <rotation name="SiVertexEndcap_layer3_module15_rotation" x="-1.5707963267948966" y="-7.46128255227576" z="0.0" unit="radian" />
+      <position name="SiVertexEndcap_layer3_module15_reflect_position" x="42.960398261774856" y="-17.794779604976625" z="-124.989" unit="mm" />
+      <rotation name="SiVertexEndcap_layer3_module15_reflect_rotation" x="-1.5707963267948966" y="-7.46128255227576" z="3.141592653589793" unit="radian" />
+      <position name="SiVertexEndcap_layer4_module0_position" x="48.0" y="0.0" z="180.011" unit="mm" />
+      <rotation name="SiVertexEndcap_layer4_module0_rotation" x="-1.5707963267948966" y="-1.5707963267948966" z="0.0" unit="radian" />
+      <position name="SiVertexEndcap_layer4_module0_reflect_position" x="48.0" y="0.0" z="-180.011" unit="mm" />
+      <rotation name="SiVertexEndcap_layer4_module0_reflect_rotation" x="-1.5707963267948966" y="-1.5707963267948966" z="3.141592653589793" unit="radian" />
+      <position name="SiVertexEndcap_layer4_module1_position" x="44.34621756054176" y="18.36880475352431" z="179.989" unit="mm" />
+      <rotation name="SiVertexEndcap_layer4_module1_rotation" x="-1.5707963267948966" y="-1.9634954084936207" z="0.0" unit="radian" />
+      <position name="SiVertexEndcap_layer4_module1_reflect_position" x="44.34621756054176" y="18.36880475352431" z="-179.989" unit="mm" />
+      <rotation name="SiVertexEndcap_layer4_module1_reflect_rotation" x="-1.5707963267948966" y="-1.9634954084936207" z="3.141592653589793" unit="radian" />
+      <position name="SiVertexEndcap_layer4_module2_position" x="33.941125496954285" y="33.94112549695428" z="180.011" unit="mm" />
+      <rotation name="SiVertexEndcap_layer4_module2_rotation" x="-1.5707963267948966" y="-2.356194490192345" z="0.0" unit="radian" />
+      <position name="SiVertexEndcap_layer4_module2_reflect_position" x="33.941125496954285" y="33.94112549695428" z="-180.011" unit="mm" />
+      <rotation name="SiVertexEndcap_layer4_module2_reflect_rotation" x="-1.5707963267948966" y="-2.356194490192345" z="3.141592653589793" unit="radian" />
+      <position name="SiVertexEndcap_layer4_module3_position" x="18.368804753524312" y="44.34621756054176" z="179.989" unit="mm" />
+      <rotation name="SiVertexEndcap_layer4_module3_rotation" x="-1.5707963267948966" y="-2.748893571891069" z="0.0" unit="radian" />
+      <position name="SiVertexEndcap_layer4_module3_reflect_position" x="18.368804753524312" y="44.34621756054176" z="-179.989" unit="mm" />
+      <rotation name="SiVertexEndcap_layer4_module3_reflect_rotation" x="-1.5707963267948966" y="-2.748893571891069" z="3.141592653589793" unit="radian" />
+      <position name="SiVertexEndcap_layer4_module4_position" x="2.9391523179536475E-15" y="48.0" z="180.011" unit="mm" />
+      <rotation name="SiVertexEndcap_layer4_module4_rotation" x="-1.5707963267948966" y="-3.141592653589793" z="0.0" unit="radian" />
+      <position name="SiVertexEndcap_layer4_module4_reflect_position" x="2.9391523179536475E-15" y="48.0" z="-180.011" unit="mm" />
+      <rotation name="SiVertexEndcap_layer4_module4_reflect_rotation" x="-1.5707963267948966" y="-3.141592653589793" z="3.141592653589793" unit="radian" />
+      <position name="SiVertexEndcap_layer4_module5_position" x="-18.36880475352431" y="44.34621756054176" z="179.989" unit="mm" />
+      <rotation name="SiVertexEndcap_layer4_module5_rotation" x="-1.5707963267948966" y="-3.5342917352885173" z="0.0" unit="radian" />
+      <position name="SiVertexEndcap_layer4_module5_reflect_position" x="-18.36880475352431" y="44.34621756054176" z="-179.989" unit="mm" />
+      <rotation name="SiVertexEndcap_layer4_module5_reflect_rotation" x="-1.5707963267948966" y="-3.5342917352885173" z="3.141592653589793" unit="radian" />
+      <position name="SiVertexEndcap_layer4_module6_position" x="-33.94112549695428" y="33.941125496954285" z="180.011" unit="mm" />
+      <rotation name="SiVertexEndcap_layer4_module6_rotation" x="-1.5707963267948966" y="-3.9269908169872414" z="0.0" unit="radian" />
+      <position name="SiVertexEndcap_layer4_module6_reflect_position" x="-33.94112549695428" y="33.941125496954285" z="-180.011" unit="mm" />
+      <rotation name="SiVertexEndcap_layer4_module6_reflect_rotation" x="-1.5707963267948966" y="-3.9269908169872414" z="3.141592653589793" unit="radian" />
+      <position name="SiVertexEndcap_layer4_module7_position" x="-44.34621756054176" y="18.368804753524316" z="179.989" unit="mm" />
+      <rotation name="SiVertexEndcap_layer4_module7_rotation" x="-1.5707963267948966" y="-4.319689898685965" z="0.0" unit="radian" />
+      <position name="SiVertexEndcap_layer4_module7_reflect_position" x="-44.34621756054176" y="18.368804753524316" z="-179.989" unit="mm" />
+      <rotation name="SiVertexEndcap_layer4_module7_reflect_rotation" x="-1.5707963267948966" y="-4.319689898685965" z="3.141592653589793" unit="radian" />
+      <position name="SiVertexEndcap_layer4_module8_position" x="-48.0" y="5.878304635907295E-15" z="180.011" unit="mm" />
+      <rotation name="SiVertexEndcap_layer4_module8_rotation" x="-1.5707963267948966" y="-4.71238898038469" z="0.0" unit="radian" />
+      <position name="SiVertexEndcap_layer4_module8_reflect_position" x="-48.0" y="5.878304635907295E-15" z="-180.011" unit="mm" />
+      <rotation name="SiVertexEndcap_layer4_module8_reflect_rotation" x="-1.5707963267948966" y="-4.71238898038469" z="3.141592653589793" unit="radian" />
+      <position name="SiVertexEndcap_layer4_module9_position" x="-44.34621756054177" y="-18.368804753524305" z="179.989" unit="mm" />
+      <rotation name="SiVertexEndcap_layer4_module9_rotation" x="-1.5707963267948966" y="-5.105088062083414" z="0.0" unit="radian" />
+      <position name="SiVertexEndcap_layer4_module9_reflect_position" x="-44.34621756054177" y="-18.368804753524305" z="-179.989" unit="mm" />
+      <rotation name="SiVertexEndcap_layer4_module9_reflect_rotation" x="-1.5707963267948966" y="-5.105088062083414" z="3.141592653589793" unit="radian" />
+      <position name="SiVertexEndcap_layer4_module10_position" x="-33.941125496954285" y="-33.94112549695428" z="180.011" unit="mm" />
+      <rotation name="SiVertexEndcap_layer4_module10_rotation" x="-1.5707963267948966" y="-5.497787143782138" z="0.0" unit="radian" />
+      <position name="SiVertexEndcap_layer4_module10_reflect_position" x="-33.941125496954285" y="-33.94112549695428" z="-180.011" unit="mm" />
+      <rotation name="SiVertexEndcap_layer4_module10_reflect_rotation" x="-1.5707963267948966" y="-5.497787143782138" z="3.141592653589793" unit="radian" />
+      <position name="SiVertexEndcap_layer4_module11_position" x="-18.368804753524337" y="-44.34621756054175" z="179.989" unit="mm" />
+      <rotation name="SiVertexEndcap_layer4_module11_rotation" x="-1.5707963267948966" y="-5.890486225480862" z="0.0" unit="radian" />
+      <position name="SiVertexEndcap_layer4_module11_reflect_position" x="-18.368804753524337" y="-44.34621756054175" z="-179.989" unit="mm" />
+      <rotation name="SiVertexEndcap_layer4_module11_reflect_rotation" x="-1.5707963267948966" y="-5.890486225480862" z="3.141592653589793" unit="radian" />
+      <position name="SiVertexEndcap_layer4_module12_position" x="-8.817456953860943E-15" y="-48.0" z="180.011" unit="mm" />
+      <rotation name="SiVertexEndcap_layer4_module12_rotation" x="-1.5707963267948966" y="-6.283185307179586" z="0.0" unit="radian" />
+      <position name="SiVertexEndcap_layer4_module12_reflect_position" x="-8.817456953860943E-15" y="-48.0" z="-180.011" unit="mm" />
+      <rotation name="SiVertexEndcap_layer4_module12_reflect_rotation" x="-1.5707963267948966" y="-6.283185307179586" z="3.141592653589793" unit="radian" />
+      <position name="SiVertexEndcap_layer4_module13_position" x="18.36880475352432" y="-44.34621756054176" z="179.989" unit="mm" />
+      <rotation name="SiVertexEndcap_layer4_module13_rotation" x="-1.5707963267948966" y="-6.675884388878311" z="0.0" unit="radian" />
+      <position name="SiVertexEndcap_layer4_module13_reflect_position" x="18.36880475352432" y="-44.34621756054176" z="-179.989" unit="mm" />
+      <rotation name="SiVertexEndcap_layer4_module13_reflect_rotation" x="-1.5707963267948966" y="-6.675884388878311" z="3.141592653589793" unit="radian" />
+      <position name="SiVertexEndcap_layer4_module14_position" x="33.94112549695431" y="-33.94112549695426" z="180.011" unit="mm" />
+      <rotation name="SiVertexEndcap_layer4_module14_rotation" x="-1.5707963267948966" y="-7.068583470577035" z="0.0" unit="radian" />
+      <position name="SiVertexEndcap_layer4_module14_reflect_position" x="33.94112549695431" y="-33.94112549695426" z="-180.011" unit="mm" />
+      <rotation name="SiVertexEndcap_layer4_module14_reflect_rotation" x="-1.5707963267948966" y="-7.068583470577035" z="3.141592653589793" unit="radian" />
+      <position name="SiVertexEndcap_layer4_module15_position" x="44.34621756054179" y="-18.36880475352426" z="179.989" unit="mm" />
+      <rotation name="SiVertexEndcap_layer4_module15_rotation" x="-1.5707963267948966" y="-7.46128255227576" z="0.0" unit="radian" />
+      <position name="SiVertexEndcap_layer4_module15_reflect_position" x="44.34621756054179" y="-18.36880475352426" z="-179.989" unit="mm" />
+      <rotation name="SiVertexEndcap_layer4_module15_reflect_rotation" x="-1.5707963267948966" y="-7.46128255227576" z="3.141592653589793" unit="radian" />
+    </define>
+    <materials>
+      <element Z="74" formula="W" name="W">
+        <atom type="A" unit="g/mol" value="183.842" />
+      </element>
+      <element Z="28" formula="Ni" name="Ni">
+        <atom type="A" unit="g/mol" value="58.6933" />
+      </element>
+      <element Z="26" formula="Fe" name="Fe">
+        <atom type="A" unit="g/mol" value="55.8451" />
+      </element>
+      <element Z="6" formula="C" name="C">
+        <atom type="A" unit="g/mol" value="12.0107" />
+      </element>
+      <element Z="1" formula="H" name="H">
+        <atom type="A" unit="g/mol" value="1.00794" />
+      </element>
+      <element Z="8" formula="O" name="O">
+        <atom type="A" unit="g/mol" value="15.9994" />
+      </element>
+      <element Z="7" formula="N" name="N">
+        <atom type="A" unit="g/mol" value="14.0068" />
+      </element>
+      <element Z="5" formula="B" name="B">
+        <atom type="A" unit="g/mol" value="10.811" />
+      </element>
+      <element Z="14" formula="Si" name="Si">
+        <atom type="A" unit="g/mol" value="28.0854" />
+      </element>
+      <material name="TungstenDens23">
+        <D value="17.7" unit="g/cm3" type="density" />
+        <fraction n="0.925" ref="W" />
+        <fraction n="0.066" ref="Ni" />
+        <fraction n="0.009" ref="Fe" />
+      </material>
+      <material name="TungstenDens24">
+        <D value="17.8" unit="g/cm3" type="density" />
+        <fraction n="0.93" ref="W" />
+        <fraction n="0.061" ref="Ni" />
+        <fraction n="0.009" ref="Fe" />
+      </material>
+      <material name="TungstenDens25">
+        <D value="18.2" unit="g/cm3" type="density" />
+        <fraction n="0.950" ref="W" />
+        <fraction n="0.044" ref="Ni" />
+        <fraction n="0.006" ref="Fe" />
+      </material>
+      <material name="Epoxy">
+        <D type="density" value="1.3" unit="g/cm3" />
+        <composite n="44" ref="H" />
+        <composite n="15" ref="C" />
+        <composite n="7" ref="O" />
+      </material>
+      <material name="CarbonFiber">
+        <D type="density" value="1.5" unit="g/cm3" />
+        <fraction n="0.65" ref="C" />
+        <fraction n="0.35" ref="Epoxy" />
+      </material>
+      <material name="CarbonFiber_25percent">
+        <D type="density" value="0.375" unit="g/cm3" />
+        <fraction n="1.0" ref="CarbonFiber" />
+      </material>
+      <material name="CarbonFiber_15percent">
+        <D type="density" value="0.225" unit="g/cm3" />
+        <fraction n="1.0" ref="CarbonFiber" />
+      </material>
+      <material name="Rohacell31">
+        <D type="density" value="0.032" unit="g/cm3" />
+        <composite n="9" ref="C" />
+        <composite n="13" ref="H" />
+        <composite n="2" ref="O" />
+        <composite n="1" ref="N" />
+      </material>
+      <material name="Rohacell31_50percent">
+        <D type="density" value="0.016" unit="g/cm3" />
+        <fraction n="1.0" ref="Rohacell31" />
+      </material>
+      <material name="Rohacell31_15percent">
+        <D type="density" value="0.0048" unit="g/cm3" />
+        <fraction n="1.0" ref="Rohacell31" />
+      </material>
+      <material name="BoratedPolyethylene5">
+        <D value="0.93" unit="g/cm3" type="density" />
+        <fraction n="0.612" ref="C" />
+        <fraction n="0.222" ref="O" />
+        <fraction n="0.116" ref="H" />
+        <fraction n="0.050" ref="B" />
+      </material>
+      <material name="SiliconCarbide">
+        <D value="3.1" unit="g/cm3" type="density" />
+        <composite n="1" ref="Si" />
+        <composite n="1" ref="C" />
+      </material>
+      <material name="SiliconCarbide_6percent">
+        <D value="0.186" unit="g/cm3" type="density" />
+        <fraction n="1.0" ref="SiliconCarbide" />
+      </material>
+      <element name="Ar" formula="Ar" Z="18">
+        <atom type="A" unit="g/mol" value="39.9477" />
+      </element>
+      <material name="Air">
+        <D type="density" unit="g/cm3" value="0.0012" />
+        <fraction n="0.754" ref="N" />
+        <fraction n="0.234" ref="O" />
+        <fraction n="0.012" ref="Ar" />
+      </material>
+      <material name="Silicon">
+        <RL type="X0" unit="cm" value="9.36607" />
+        <NIL type="lambda" unit="cm" value="45.7531" />
+        <D type="density" unit="g/cm3" value="2.33" />
+        <composite n="1" ref="Si" />
+      </material>
+      <material name="Vacuum">
+        <D type="density" unit="g/cm3" value="0.00000001" />
+        <fraction n="1" ref="H" />
+      </material>
+    </materials>
+    <solids>
+      <box name="world_box" x="world_x" y="world_y" z="world_z" />
+      <tube name="tracking_cylinder" deltaphi="6.283185307179586" rmin="0.0" rmax="tracking_region_radius" z="2*tracking_region_zmax" />
+      <box name="SiVertexBarrel_VtxBarrelModuleInner_box" x="9.8" y="126.0" z="0.6" />
+      <box name="SiVertexBarrel_VtxBarrelModuleInner_component0_box" x="7.6" y="125.0" z="0.26" />
+      <box name="SiVertexBarrel_VtxBarrelModuleInner_component1_box" x="7.6" y="125.0" z="0.05" />
+      <box name="SiVertexBarrel_VtxBarrelModuleInner_component2_box" x="9.6" y="125.0" z="0.093" />
+      <box name="SiVertexBarrel_VtxBarrelModuleInner_component3_box" x="9.6" y="125.0" z="0.02" />
+      <box name="SiVertexBarrel_VtxBarrelModuleOuter_box" x="14.0" y="126.0" z="0.6" />
+      <box name="SiVertexBarrel_VtxBarrelModuleOuter_component0_box" x="11.6" y="125.0" z="0.26" />
+      <box name="SiVertexBarrel_VtxBarrelModuleOuter_component1_box" x="11.6" y="125.0" z="0.05" />
+      <box name="SiVertexBarrel_VtxBarrelModuleOuter_component2_box" x="13.8" y="125.0" z="0.093" />
+      <box name="SiVertexBarrel_VtxBarrelModuleOuter_component3_box" x="13.8" y="125.0" z="0.02" />
+      <tube name="SiVertexBarrel_layer1_tube" deltaphi="6.283185307179586" rmin="13.0" rmax="17.0" z="126.0" />
+      <tube name="SiVertexBarrel_layer2_tube" deltaphi="6.283185307179586" rmin="21.0" rmax="25.0" z="126.0" />
+      <tube name="SiVertexBarrel_layer3_tube" deltaphi="6.283185307179586" rmin="34.0" rmax="38.0" z="126.0" />
+      <tube name="SiVertexBarrel_layer4_tube" deltaphi="6.283185307179586" rmin="46.6" rmax="50.6" z="126.0" />
+      <tube name="SiVertexBarrel_layer5_tube" deltaphi="6.283185307179586" rmin="59.0" rmax="63.0" z="126.0" />
+      <trd name="SiVertexEndcapModule1Trd" x1="6.068" x2="29.364" y1="0.1" y2="0.1" z="58.56" />
+      <trd name="SiVertexEndcapModule1Volume_component0_trd" x1="6.068" x2="29.364" y1="0.02" y2="0.02" z="58.56" />
+      <trd name="SiVertexEndcapModule1Volume_component1_trd" x1="6.068" x2="29.364" y1="0.08" y2="0.08" z="58.56" />
+      <trd name="SiVertexEndcapModule2Trd" x1="6.466" x2="29.364" y1="0.1" y2="0.1" z="57.56" />
+      <trd name="SiVertexEndcapModule2Volume_component0_trd" x1="6.466" x2="29.364" y1="0.02" y2="0.02" z="57.56" />
+      <trd name="SiVertexEndcapModule2Volume_component1_trd" x1="6.466" x2="29.364" y1="0.08" y2="0.08" z="57.56" />
+      <trd name="SiVertexEndcapModule3Trd" x1="7.26" x2="29.364" y1="0.1" y2="0.1" z="55.56" />
+      <trd name="SiVertexEndcapModule3Volume_component0_trd" x1="7.26" x2="29.364" y1="0.02" y2="0.02" z="55.56" />
+      <trd name="SiVertexEndcapModule3Volume_component1_trd" x1="7.26" x2="29.364" y1="0.08" y2="0.08" z="55.56" />
+      <trd name="SiVertexEndcapModule4Trd" x1="8.454" x2="29.364" y1="0.1" y2="0.1" z="52.56" />
+      <trd name="SiVertexEndcapModule4Volume_component0_trd" x1="8.454" x2="29.364" y1="0.02" y2="0.02" z="52.56" />
+      <trd name="SiVertexEndcapModule4Volume_component1_trd" x1="8.454" x2="29.364" y1="0.08" y2="0.08" z="52.56" />
+    </solids>
+    <structure>
+      <volume name="SiVertexBarrel_VtxBarrelModuleInner_component0">
+        <materialref ref="CarbonFiber_25percent" />
+        <solidref ref="SiVertexBarrel_VtxBarrelModuleInner_component0_box" />
+        <visref ref="InvisibleNoDaughters" />
+      </volume>
+      <volume name="SiVertexBarrel_VtxBarrelModuleInner_component1">
+        <materialref ref="Epoxy" />
+        <solidref ref="SiVertexBarrel_VtxBarrelModuleInner_component1_box" />
+        <visref ref="InvisibleNoDaughters" />
+      </volume>
+      <volume name="SiVertexBarrel_VtxBarrelModuleInner_component2">
+        <materialref ref="Silicon" />
+        <solidref ref="SiVertexBarrel_VtxBarrelModuleInner_component2_box" />
+        <visref ref="InvisibleNoDaughters" />
+      </volume>
+      <volume name="SiVertexBarrel_VtxBarrelModuleInner_component3">
+        <materialref ref="Silicon" />
+        <solidref ref="SiVertexBarrel_VtxBarrelModuleInner_component3_box" />
+        <sdref ref="SiVertexBarrel" />
+        <visref ref="InvisibleNoDaughters" />
+      </volume>
+      <volume name="SiVertexBarrel_VtxBarrelModuleInner">
+        <materialref ref="Air" />
+        <solidref ref="SiVertexBarrel_VtxBarrelModuleInner_box" />
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleInner_component0" />
+          <positionref ref="SiVertexBarrel_VtxBarrelModuleInner_component0_position" />
+          <rotationref ref="identity_rot" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleInner_component1" />
+          <positionref ref="SiVertexBarrel_VtxBarrelModuleInner_component1_position" />
+          <rotationref ref="identity_rot" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleInner_component2" />
+          <positionref ref="SiVertexBarrel_VtxBarrelModuleInner_component2_position" />
+          <rotationref ref="identity_rot" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleInner_component3" />
+          <positionref ref="SiVertexBarrel_VtxBarrelModuleInner_component3_position" />
+          <rotationref ref="identity_rot" />
+          <physvolid field_name="sensor" value="0" />
+        </physvol>
+        <visref ref="SiVertexBarrelVis" />
+      </volume>
+      <volume name="SiVertexBarrel_VtxBarrelModuleOuter_component0">
+        <materialref ref="CarbonFiber_25percent" />
+        <solidref ref="SiVertexBarrel_VtxBarrelModuleOuter_component0_box" />
+        <visref ref="InvisibleNoDaughters" />
+      </volume>
+      <volume name="SiVertexBarrel_VtxBarrelModuleOuter_component1">
+        <materialref ref="Epoxy" />
+        <solidref ref="SiVertexBarrel_VtxBarrelModuleOuter_component1_box" />
+        <visref ref="InvisibleNoDaughters" />
+      </volume>
+      <volume name="SiVertexBarrel_VtxBarrelModuleOuter_component2">
+        <materialref ref="Silicon" />
+        <solidref ref="SiVertexBarrel_VtxBarrelModuleOuter_component2_box" />
+        <visref ref="InvisibleNoDaughters" />
+      </volume>
+      <volume name="SiVertexBarrel_VtxBarrelModuleOuter_component3">
+        <materialref ref="Silicon" />
+        <solidref ref="SiVertexBarrel_VtxBarrelModuleOuter_component3_box" />
+        <sdref ref="SiVertexBarrel" />
+        <visref ref="InvisibleNoDaughters" />
+      </volume>
+      <volume name="SiVertexBarrel_VtxBarrelModuleOuter">
+        <materialref ref="Air" />
+        <solidref ref="SiVertexBarrel_VtxBarrelModuleOuter_box" />
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleOuter_component0" />
+          <positionref ref="SiVertexBarrel_VtxBarrelModuleOuter_component0_position" />
+          <rotationref ref="identity_rot" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleOuter_component1" />
+          <positionref ref="SiVertexBarrel_VtxBarrelModuleOuter_component1_position" />
+          <rotationref ref="identity_rot" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleOuter_component2" />
+          <positionref ref="SiVertexBarrel_VtxBarrelModuleOuter_component2_position" />
+          <rotationref ref="identity_rot" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleOuter_component3" />
+          <positionref ref="SiVertexBarrel_VtxBarrelModuleOuter_component3_position" />
+          <rotationref ref="identity_rot" />
+          <physvolid field_name="sensor" value="0" />
+        </physvol>
+        <visref ref="SiVertexBarrelVis" />
+      </volume>
+      <volume name="SiVertexBarrel_layer1">
+        <materialref ref="Air" />
+        <solidref ref="SiVertexBarrel_layer1_tube" />
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleInner" />
+          <positionref ref="SiVertexBarrel_layer1_phi0_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer1_phi0_z0_rotation" />
+          <physvolid field_name="module" value="0" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleInner" />
+          <positionref ref="SiVertexBarrel_layer1_phi1_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer1_phi1_z0_rotation" />
+          <physvolid field_name="module" value="1" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleInner" />
+          <positionref ref="SiVertexBarrel_layer1_phi2_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer1_phi2_z0_rotation" />
+          <physvolid field_name="module" value="2" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleInner" />
+          <positionref ref="SiVertexBarrel_layer1_phi3_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer1_phi3_z0_rotation" />
+          <physvolid field_name="module" value="3" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleInner" />
+          <positionref ref="SiVertexBarrel_layer1_phi4_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer1_phi4_z0_rotation" />
+          <physvolid field_name="module" value="4" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleInner" />
+          <positionref ref="SiVertexBarrel_layer1_phi5_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer1_phi5_z0_rotation" />
+          <physvolid field_name="module" value="5" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleInner" />
+          <positionref ref="SiVertexBarrel_layer1_phi6_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer1_phi6_z0_rotation" />
+          <physvolid field_name="module" value="6" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleInner" />
+          <positionref ref="SiVertexBarrel_layer1_phi7_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer1_phi7_z0_rotation" />
+          <physvolid field_name="module" value="7" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleInner" />
+          <positionref ref="SiVertexBarrel_layer1_phi8_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer1_phi8_z0_rotation" />
+          <physvolid field_name="module" value="8" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleInner" />
+          <positionref ref="SiVertexBarrel_layer1_phi9_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer1_phi9_z0_rotation" />
+          <physvolid field_name="module" value="9" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleInner" />
+          <positionref ref="SiVertexBarrel_layer1_phi10_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer1_phi10_z0_rotation" />
+          <physvolid field_name="module" value="10" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleInner" />
+          <positionref ref="SiVertexBarrel_layer1_phi11_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer1_phi11_z0_rotation" />
+          <physvolid field_name="module" value="11" />
+        </physvol>
+      </volume>
+      <volume name="SiVertexBarrel_layer2">
+        <materialref ref="Air" />
+        <solidref ref="SiVertexBarrel_layer2_tube" />
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleOuter" />
+          <positionref ref="SiVertexBarrel_layer2_phi0_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer2_phi0_z0_rotation" />
+          <physvolid field_name="module" value="0" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleOuter" />
+          <positionref ref="SiVertexBarrel_layer2_phi1_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer2_phi1_z0_rotation" />
+          <physvolid field_name="module" value="1" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleOuter" />
+          <positionref ref="SiVertexBarrel_layer2_phi2_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer2_phi2_z0_rotation" />
+          <physvolid field_name="module" value="2" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleOuter" />
+          <positionref ref="SiVertexBarrel_layer2_phi3_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer2_phi3_z0_rotation" />
+          <physvolid field_name="module" value="3" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleOuter" />
+          <positionref ref="SiVertexBarrel_layer2_phi4_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer2_phi4_z0_rotation" />
+          <physvolid field_name="module" value="4" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleOuter" />
+          <positionref ref="SiVertexBarrel_layer2_phi5_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer2_phi5_z0_rotation" />
+          <physvolid field_name="module" value="5" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleOuter" />
+          <positionref ref="SiVertexBarrel_layer2_phi6_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer2_phi6_z0_rotation" />
+          <physvolid field_name="module" value="6" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleOuter" />
+          <positionref ref="SiVertexBarrel_layer2_phi7_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer2_phi7_z0_rotation" />
+          <physvolid field_name="module" value="7" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleOuter" />
+          <positionref ref="SiVertexBarrel_layer2_phi8_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer2_phi8_z0_rotation" />
+          <physvolid field_name="module" value="8" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleOuter" />
+          <positionref ref="SiVertexBarrel_layer2_phi9_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer2_phi9_z0_rotation" />
+          <physvolid field_name="module" value="9" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleOuter" />
+          <positionref ref="SiVertexBarrel_layer2_phi10_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer2_phi10_z0_rotation" />
+          <physvolid field_name="module" value="10" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleOuter" />
+          <positionref ref="SiVertexBarrel_layer2_phi11_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer2_phi11_z0_rotation" />
+          <physvolid field_name="module" value="11" />
+        </physvol>
+      </volume>
+      <volume name="SiVertexBarrel_layer3">
+        <materialref ref="Air" />
+        <solidref ref="SiVertexBarrel_layer3_tube" />
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleOuter" />
+          <positionref ref="SiVertexBarrel_layer3_phi0_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer3_phi0_z0_rotation" />
+          <physvolid field_name="module" value="0" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleOuter" />
+          <positionref ref="SiVertexBarrel_layer3_phi1_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer3_phi1_z0_rotation" />
+          <physvolid field_name="module" value="1" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleOuter" />
+          <positionref ref="SiVertexBarrel_layer3_phi2_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer3_phi2_z0_rotation" />
+          <physvolid field_name="module" value="2" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleOuter" />
+          <positionref ref="SiVertexBarrel_layer3_phi3_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer3_phi3_z0_rotation" />
+          <physvolid field_name="module" value="3" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleOuter" />
+          <positionref ref="SiVertexBarrel_layer3_phi4_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer3_phi4_z0_rotation" />
+          <physvolid field_name="module" value="4" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleOuter" />
+          <positionref ref="SiVertexBarrel_layer3_phi5_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer3_phi5_z0_rotation" />
+          <physvolid field_name="module" value="5" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleOuter" />
+          <positionref ref="SiVertexBarrel_layer3_phi6_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer3_phi6_z0_rotation" />
+          <physvolid field_name="module" value="6" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleOuter" />
+          <positionref ref="SiVertexBarrel_layer3_phi7_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer3_phi7_z0_rotation" />
+          <physvolid field_name="module" value="7" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleOuter" />
+          <positionref ref="SiVertexBarrel_layer3_phi8_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer3_phi8_z0_rotation" />
+          <physvolid field_name="module" value="8" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleOuter" />
+          <positionref ref="SiVertexBarrel_layer3_phi9_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer3_phi9_z0_rotation" />
+          <physvolid field_name="module" value="9" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleOuter" />
+          <positionref ref="SiVertexBarrel_layer3_phi10_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer3_phi10_z0_rotation" />
+          <physvolid field_name="module" value="10" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleOuter" />
+          <positionref ref="SiVertexBarrel_layer3_phi11_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer3_phi11_z0_rotation" />
+          <physvolid field_name="module" value="11" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleOuter" />
+          <positionref ref="SiVertexBarrel_layer3_phi12_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer3_phi12_z0_rotation" />
+          <physvolid field_name="module" value="12" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleOuter" />
+          <positionref ref="SiVertexBarrel_layer3_phi13_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer3_phi13_z0_rotation" />
+          <physvolid field_name="module" value="13" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleOuter" />
+          <positionref ref="SiVertexBarrel_layer3_phi14_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer3_phi14_z0_rotation" />
+          <physvolid field_name="module" value="14" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleOuter" />
+          <positionref ref="SiVertexBarrel_layer3_phi15_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer3_phi15_z0_rotation" />
+          <physvolid field_name="module" value="15" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleOuter" />
+          <positionref ref="SiVertexBarrel_layer3_phi16_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer3_phi16_z0_rotation" />
+          <physvolid field_name="module" value="16" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleOuter" />
+          <positionref ref="SiVertexBarrel_layer3_phi17_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer3_phi17_z0_rotation" />
+          <physvolid field_name="module" value="17" />
+        </physvol>
+      </volume>
+      <volume name="SiVertexBarrel_layer4">
+        <materialref ref="Air" />
+        <solidref ref="SiVertexBarrel_layer4_tube" />
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleOuter" />
+          <positionref ref="SiVertexBarrel_layer4_phi0_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer4_phi0_z0_rotation" />
+          <physvolid field_name="module" value="0" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleOuter" />
+          <positionref ref="SiVertexBarrel_layer4_phi1_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer4_phi1_z0_rotation" />
+          <physvolid field_name="module" value="1" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleOuter" />
+          <positionref ref="SiVertexBarrel_layer4_phi2_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer4_phi2_z0_rotation" />
+          <physvolid field_name="module" value="2" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleOuter" />
+          <positionref ref="SiVertexBarrel_layer4_phi3_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer4_phi3_z0_rotation" />
+          <physvolid field_name="module" value="3" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleOuter" />
+          <positionref ref="SiVertexBarrel_layer4_phi4_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer4_phi4_z0_rotation" />
+          <physvolid field_name="module" value="4" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleOuter" />
+          <positionref ref="SiVertexBarrel_layer4_phi5_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer4_phi5_z0_rotation" />
+          <physvolid field_name="module" value="5" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleOuter" />
+          <positionref ref="SiVertexBarrel_layer4_phi6_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer4_phi6_z0_rotation" />
+          <physvolid field_name="module" value="6" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleOuter" />
+          <positionref ref="SiVertexBarrel_layer4_phi7_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer4_phi7_z0_rotation" />
+          <physvolid field_name="module" value="7" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleOuter" />
+          <positionref ref="SiVertexBarrel_layer4_phi8_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer4_phi8_z0_rotation" />
+          <physvolid field_name="module" value="8" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleOuter" />
+          <positionref ref="SiVertexBarrel_layer4_phi9_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer4_phi9_z0_rotation" />
+          <physvolid field_name="module" value="9" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleOuter" />
+          <positionref ref="SiVertexBarrel_layer4_phi10_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer4_phi10_z0_rotation" />
+          <physvolid field_name="module" value="10" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleOuter" />
+          <positionref ref="SiVertexBarrel_layer4_phi11_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer4_phi11_z0_rotation" />
+          <physvolid field_name="module" value="11" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleOuter" />
+          <positionref ref="SiVertexBarrel_layer4_phi12_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer4_phi12_z0_rotation" />
+          <physvolid field_name="module" value="12" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleOuter" />
+          <positionref ref="SiVertexBarrel_layer4_phi13_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer4_phi13_z0_rotation" />
+          <physvolid field_name="module" value="13" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleOuter" />
+          <positionref ref="SiVertexBarrel_layer4_phi14_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer4_phi14_z0_rotation" />
+          <physvolid field_name="module" value="14" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleOuter" />
+          <positionref ref="SiVertexBarrel_layer4_phi15_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer4_phi15_z0_rotation" />
+          <physvolid field_name="module" value="15" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleOuter" />
+          <positionref ref="SiVertexBarrel_layer4_phi16_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer4_phi16_z0_rotation" />
+          <physvolid field_name="module" value="16" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleOuter" />
+          <positionref ref="SiVertexBarrel_layer4_phi17_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer4_phi17_z0_rotation" />
+          <physvolid field_name="module" value="17" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleOuter" />
+          <positionref ref="SiVertexBarrel_layer4_phi18_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer4_phi18_z0_rotation" />
+          <physvolid field_name="module" value="18" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleOuter" />
+          <positionref ref="SiVertexBarrel_layer4_phi19_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer4_phi19_z0_rotation" />
+          <physvolid field_name="module" value="19" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleOuter" />
+          <positionref ref="SiVertexBarrel_layer4_phi20_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer4_phi20_z0_rotation" />
+          <physvolid field_name="module" value="20" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleOuter" />
+          <positionref ref="SiVertexBarrel_layer4_phi21_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer4_phi21_z0_rotation" />
+          <physvolid field_name="module" value="21" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleOuter" />
+          <positionref ref="SiVertexBarrel_layer4_phi22_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer4_phi22_z0_rotation" />
+          <physvolid field_name="module" value="22" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleOuter" />
+          <positionref ref="SiVertexBarrel_layer4_phi23_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer4_phi23_z0_rotation" />
+          <physvolid field_name="module" value="23" />
+        </physvol>
+      </volume>
+      <volume name="SiVertexBarrel_layer5">
+        <materialref ref="Air" />
+        <solidref ref="SiVertexBarrel_layer5_tube" />
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleOuter" />
+          <positionref ref="SiVertexBarrel_layer5_phi0_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer5_phi0_z0_rotation" />
+          <physvolid field_name="module" value="0" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleOuter" />
+          <positionref ref="SiVertexBarrel_layer5_phi1_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer5_phi1_z0_rotation" />
+          <physvolid field_name="module" value="1" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleOuter" />
+          <positionref ref="SiVertexBarrel_layer5_phi2_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer5_phi2_z0_rotation" />
+          <physvolid field_name="module" value="2" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleOuter" />
+          <positionref ref="SiVertexBarrel_layer5_phi3_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer5_phi3_z0_rotation" />
+          <physvolid field_name="module" value="3" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleOuter" />
+          <positionref ref="SiVertexBarrel_layer5_phi4_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer5_phi4_z0_rotation" />
+          <physvolid field_name="module" value="4" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleOuter" />
+          <positionref ref="SiVertexBarrel_layer5_phi5_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer5_phi5_z0_rotation" />
+          <physvolid field_name="module" value="5" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleOuter" />
+          <positionref ref="SiVertexBarrel_layer5_phi6_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer5_phi6_z0_rotation" />
+          <physvolid field_name="module" value="6" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleOuter" />
+          <positionref ref="SiVertexBarrel_layer5_phi7_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer5_phi7_z0_rotation" />
+          <physvolid field_name="module" value="7" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleOuter" />
+          <positionref ref="SiVertexBarrel_layer5_phi8_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer5_phi8_z0_rotation" />
+          <physvolid field_name="module" value="8" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleOuter" />
+          <positionref ref="SiVertexBarrel_layer5_phi9_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer5_phi9_z0_rotation" />
+          <physvolid field_name="module" value="9" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleOuter" />
+          <positionref ref="SiVertexBarrel_layer5_phi10_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer5_phi10_z0_rotation" />
+          <physvolid field_name="module" value="10" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleOuter" />
+          <positionref ref="SiVertexBarrel_layer5_phi11_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer5_phi11_z0_rotation" />
+          <physvolid field_name="module" value="11" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleOuter" />
+          <positionref ref="SiVertexBarrel_layer5_phi12_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer5_phi12_z0_rotation" />
+          <physvolid field_name="module" value="12" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleOuter" />
+          <positionref ref="SiVertexBarrel_layer5_phi13_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer5_phi13_z0_rotation" />
+          <physvolid field_name="module" value="13" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleOuter" />
+          <positionref ref="SiVertexBarrel_layer5_phi14_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer5_phi14_z0_rotation" />
+          <physvolid field_name="module" value="14" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleOuter" />
+          <positionref ref="SiVertexBarrel_layer5_phi15_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer5_phi15_z0_rotation" />
+          <physvolid field_name="module" value="15" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleOuter" />
+          <positionref ref="SiVertexBarrel_layer5_phi16_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer5_phi16_z0_rotation" />
+          <physvolid field_name="module" value="16" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleOuter" />
+          <positionref ref="SiVertexBarrel_layer5_phi17_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer5_phi17_z0_rotation" />
+          <physvolid field_name="module" value="17" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleOuter" />
+          <positionref ref="SiVertexBarrel_layer5_phi18_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer5_phi18_z0_rotation" />
+          <physvolid field_name="module" value="18" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleOuter" />
+          <positionref ref="SiVertexBarrel_layer5_phi19_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer5_phi19_z0_rotation" />
+          <physvolid field_name="module" value="19" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleOuter" />
+          <positionref ref="SiVertexBarrel_layer5_phi20_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer5_phi20_z0_rotation" />
+          <physvolid field_name="module" value="20" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleOuter" />
+          <positionref ref="SiVertexBarrel_layer5_phi21_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer5_phi21_z0_rotation" />
+          <physvolid field_name="module" value="21" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleOuter" />
+          <positionref ref="SiVertexBarrel_layer5_phi22_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer5_phi22_z0_rotation" />
+          <physvolid field_name="module" value="22" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleOuter" />
+          <positionref ref="SiVertexBarrel_layer5_phi23_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer5_phi23_z0_rotation" />
+          <physvolid field_name="module" value="23" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleOuter" />
+          <positionref ref="SiVertexBarrel_layer5_phi24_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer5_phi24_z0_rotation" />
+          <physvolid field_name="module" value="24" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleOuter" />
+          <positionref ref="SiVertexBarrel_layer5_phi25_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer5_phi25_z0_rotation" />
+          <physvolid field_name="module" value="25" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleOuter" />
+          <positionref ref="SiVertexBarrel_layer5_phi26_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer5_phi26_z0_rotation" />
+          <physvolid field_name="module" value="26" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleOuter" />
+          <positionref ref="SiVertexBarrel_layer5_phi27_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer5_phi27_z0_rotation" />
+          <physvolid field_name="module" value="27" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleOuter" />
+          <positionref ref="SiVertexBarrel_layer5_phi28_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer5_phi28_z0_rotation" />
+          <physvolid field_name="module" value="28" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_VtxBarrelModuleOuter" />
+          <positionref ref="SiVertexBarrel_layer5_phi29_z0_position" />
+          <rotationref ref="SiVertexBarrel_layer5_phi29_z0_rotation" />
+          <physvolid field_name="module" value="29" />
+        </physvol>
+      </volume>
+      <volume name="SiVertexEndcapModule1Volume_component0">
+        <materialref ref="Silicon" />
+        <solidref ref="SiVertexEndcapModule1Volume_component0_trd" />
+        <sdref ref="SiVertexEndcap" />
+      </volume>
+      <volume name="SiVertexEndcapModule1Volume_component1">
+        <materialref ref="Silicon" />
+        <solidref ref="SiVertexEndcapModule1Volume_component1_trd" />
+      </volume>
+      <volume name="SiVertexEndcapModule1Volume">
+        <materialref ref="Vacuum" />
+        <solidref ref="SiVertexEndcapModule1Trd" />
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule1Volume_component0" />
+          <positionref ref="SiVertexEndcapModule1Volume_component0_position" />
+          <rotationref ref="SiVertexEndcapModule1Volume_component0_rotation" />
+          <physvolid field_name="component" value="0" />
+          <physvolid field_name="sensor" value="0" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule1Volume_component1" />
+          <positionref ref="SiVertexEndcapModule1Volume_component1_position" />
+          <rotationref ref="SiVertexEndcapModule1Volume_component1_rotation" />
+          <physvolid field_name="component" value="1" />
+        </physvol>
+      </volume>
+      <volume name="SiVertexEndcapModule2Volume_component0">
+        <materialref ref="Silicon" />
+        <solidref ref="SiVertexEndcapModule2Volume_component0_trd" />
+        <sdref ref="SiVertexEndcap" />
+      </volume>
+      <volume name="SiVertexEndcapModule2Volume_component1">
+        <materialref ref="Silicon" />
+        <solidref ref="SiVertexEndcapModule2Volume_component1_trd" />
+      </volume>
+      <volume name="SiVertexEndcapModule2Volume">
+        <materialref ref="Vacuum" />
+        <solidref ref="SiVertexEndcapModule2Trd" />
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume_component0" />
+          <positionref ref="SiVertexEndcapModule2Volume_component0_position" />
+          <rotationref ref="SiVertexEndcapModule2Volume_component0_rotation" />
+          <physvolid field_name="component" value="0" />
+          <physvolid field_name="sensor" value="0" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume_component1" />
+          <positionref ref="SiVertexEndcapModule2Volume_component1_position" />
+          <rotationref ref="SiVertexEndcapModule2Volume_component1_rotation" />
+          <physvolid field_name="component" value="1" />
+        </physvol>
+      </volume>
+      <volume name="SiVertexEndcapModule3Volume_component0">
+        <materialref ref="Silicon" />
+        <solidref ref="SiVertexEndcapModule3Volume_component0_trd" />
+        <sdref ref="SiVertexEndcap" />
+      </volume>
+      <volume name="SiVertexEndcapModule3Volume_component1">
+        <materialref ref="Silicon" />
+        <solidref ref="SiVertexEndcapModule3Volume_component1_trd" />
+      </volume>
+      <volume name="SiVertexEndcapModule3Volume">
+        <materialref ref="Vacuum" />
+        <solidref ref="SiVertexEndcapModule3Trd" />
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule3Volume_component0" />
+          <positionref ref="SiVertexEndcapModule3Volume_component0_position" />
+          <rotationref ref="SiVertexEndcapModule3Volume_component0_rotation" />
+          <physvolid field_name="component" value="0" />
+          <physvolid field_name="sensor" value="0" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule3Volume_component1" />
+          <positionref ref="SiVertexEndcapModule3Volume_component1_position" />
+          <rotationref ref="SiVertexEndcapModule3Volume_component1_rotation" />
+          <physvolid field_name="component" value="1" />
+        </physvol>
+      </volume>
+      <volume name="SiVertexEndcapModule4Volume_component0">
+        <materialref ref="Silicon" />
+        <solidref ref="SiVertexEndcapModule4Volume_component0_trd" />
+        <sdref ref="SiVertexEndcap" />
+      </volume>
+      <volume name="SiVertexEndcapModule4Volume_component1">
+        <materialref ref="Silicon" />
+        <solidref ref="SiVertexEndcapModule4Volume_component1_trd" />
+      </volume>
+      <volume name="SiVertexEndcapModule4Volume">
+        <materialref ref="Vacuum" />
+        <solidref ref="SiVertexEndcapModule4Trd" />
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule4Volume_component0" />
+          <positionref ref="SiVertexEndcapModule4Volume_component0_position" />
+          <rotationref ref="SiVertexEndcapModule4Volume_component0_rotation" />
+          <physvolid field_name="component" value="0" />
+          <physvolid field_name="sensor" value="0" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule4Volume_component1" />
+          <positionref ref="SiVertexEndcapModule4Volume_component1_position" />
+          <rotationref ref="SiVertexEndcapModule4Volume_component1_rotation" />
+          <physvolid field_name="component" value="1" />
+        </physvol>
+      </volume>
+      <volume name="tracking_volume">
+        <materialref ref="Air" />
+        <solidref ref="tracking_cylinder" />
+        <physvol>
+          <volumeref ref="SiVertexBarrel_layer1" />
+          <positionref ref="identity_pos" />
+          <rotationref ref="identity_rot" />
+          <physvolid field_name="system" value="1" />
+          <physvolid field_name="barrel" value="0" />
+          <physvolid field_name="layer" value="1" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_layer2" />
+          <positionref ref="identity_pos" />
+          <rotationref ref="identity_rot" />
+          <physvolid field_name="system" value="1" />
+          <physvolid field_name="barrel" value="0" />
+          <physvolid field_name="layer" value="2" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_layer3" />
+          <positionref ref="identity_pos" />
+          <rotationref ref="identity_rot" />
+          <physvolid field_name="system" value="1" />
+          <physvolid field_name="barrel" value="0" />
+          <physvolid field_name="layer" value="3" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_layer4" />
+          <positionref ref="identity_pos" />
+          <rotationref ref="identity_rot" />
+          <physvolid field_name="system" value="1" />
+          <physvolid field_name="barrel" value="0" />
+          <physvolid field_name="layer" value="4" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexBarrel_layer5" />
+          <positionref ref="identity_pos" />
+          <rotationref ref="identity_rot" />
+          <physvolid field_name="system" value="1" />
+          <physvolid field_name="barrel" value="0" />
+          <physvolid field_name="layer" value="5" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule1Volume" />
+          <positionref ref="SiVertexEndcap_layer1_module0_position" />
+          <rotationref ref="SiVertexEndcap_layer1_module0_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="1" />
+          <physvolid field_name="layer" value="1" />
+          <physvolid field_name="module" value="0" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule1Volume" />
+          <positionref ref="SiVertexEndcap_layer1_module0_reflect_position" />
+          <rotationref ref="SiVertexEndcap_layer1_module0_reflect_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="2" />
+          <physvolid field_name="layer" value="1" />
+          <physvolid field_name="module" value="0" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule1Volume" />
+          <positionref ref="SiVertexEndcap_layer1_module1_position" />
+          <rotationref ref="SiVertexEndcap_layer1_module1_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="1" />
+          <physvolid field_name="layer" value="1" />
+          <physvolid field_name="module" value="1" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule1Volume" />
+          <positionref ref="SiVertexEndcap_layer1_module1_reflect_position" />
+          <rotationref ref="SiVertexEndcap_layer1_module1_reflect_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="2" />
+          <physvolid field_name="layer" value="1" />
+          <physvolid field_name="module" value="1" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule1Volume" />
+          <positionref ref="SiVertexEndcap_layer1_module2_position" />
+          <rotationref ref="SiVertexEndcap_layer1_module2_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="1" />
+          <physvolid field_name="layer" value="1" />
+          <physvolid field_name="module" value="2" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule1Volume" />
+          <positionref ref="SiVertexEndcap_layer1_module2_reflect_position" />
+          <rotationref ref="SiVertexEndcap_layer1_module2_reflect_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="2" />
+          <physvolid field_name="layer" value="1" />
+          <physvolid field_name="module" value="2" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule1Volume" />
+          <positionref ref="SiVertexEndcap_layer1_module3_position" />
+          <rotationref ref="SiVertexEndcap_layer1_module3_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="1" />
+          <physvolid field_name="layer" value="1" />
+          <physvolid field_name="module" value="3" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule1Volume" />
+          <positionref ref="SiVertexEndcap_layer1_module3_reflect_position" />
+          <rotationref ref="SiVertexEndcap_layer1_module3_reflect_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="2" />
+          <physvolid field_name="layer" value="1" />
+          <physvolid field_name="module" value="3" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule1Volume" />
+          <positionref ref="SiVertexEndcap_layer1_module4_position" />
+          <rotationref ref="SiVertexEndcap_layer1_module4_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="1" />
+          <physvolid field_name="layer" value="1" />
+          <physvolid field_name="module" value="4" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule1Volume" />
+          <positionref ref="SiVertexEndcap_layer1_module4_reflect_position" />
+          <rotationref ref="SiVertexEndcap_layer1_module4_reflect_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="2" />
+          <physvolid field_name="layer" value="1" />
+          <physvolid field_name="module" value="4" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule1Volume" />
+          <positionref ref="SiVertexEndcap_layer1_module5_position" />
+          <rotationref ref="SiVertexEndcap_layer1_module5_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="1" />
+          <physvolid field_name="layer" value="1" />
+          <physvolid field_name="module" value="5" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule1Volume" />
+          <positionref ref="SiVertexEndcap_layer1_module5_reflect_position" />
+          <rotationref ref="SiVertexEndcap_layer1_module5_reflect_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="2" />
+          <physvolid field_name="layer" value="1" />
+          <physvolid field_name="module" value="5" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule1Volume" />
+          <positionref ref="SiVertexEndcap_layer1_module6_position" />
+          <rotationref ref="SiVertexEndcap_layer1_module6_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="1" />
+          <physvolid field_name="layer" value="1" />
+          <physvolid field_name="module" value="6" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule1Volume" />
+          <positionref ref="SiVertexEndcap_layer1_module6_reflect_position" />
+          <rotationref ref="SiVertexEndcap_layer1_module6_reflect_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="2" />
+          <physvolid field_name="layer" value="1" />
+          <physvolid field_name="module" value="6" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule1Volume" />
+          <positionref ref="SiVertexEndcap_layer1_module7_position" />
+          <rotationref ref="SiVertexEndcap_layer1_module7_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="1" />
+          <physvolid field_name="layer" value="1" />
+          <physvolid field_name="module" value="7" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule1Volume" />
+          <positionref ref="SiVertexEndcap_layer1_module7_reflect_position" />
+          <rotationref ref="SiVertexEndcap_layer1_module7_reflect_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="2" />
+          <physvolid field_name="layer" value="1" />
+          <physvolid field_name="module" value="7" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule1Volume" />
+          <positionref ref="SiVertexEndcap_layer1_module8_position" />
+          <rotationref ref="SiVertexEndcap_layer1_module8_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="1" />
+          <physvolid field_name="layer" value="1" />
+          <physvolid field_name="module" value="8" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule1Volume" />
+          <positionref ref="SiVertexEndcap_layer1_module8_reflect_position" />
+          <rotationref ref="SiVertexEndcap_layer1_module8_reflect_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="2" />
+          <physvolid field_name="layer" value="1" />
+          <physvolid field_name="module" value="8" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule1Volume" />
+          <positionref ref="SiVertexEndcap_layer1_module9_position" />
+          <rotationref ref="SiVertexEndcap_layer1_module9_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="1" />
+          <physvolid field_name="layer" value="1" />
+          <physvolid field_name="module" value="9" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule1Volume" />
+          <positionref ref="SiVertexEndcap_layer1_module9_reflect_position" />
+          <rotationref ref="SiVertexEndcap_layer1_module9_reflect_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="2" />
+          <physvolid field_name="layer" value="1" />
+          <physvolid field_name="module" value="9" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule1Volume" />
+          <positionref ref="SiVertexEndcap_layer1_module10_position" />
+          <rotationref ref="SiVertexEndcap_layer1_module10_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="1" />
+          <physvolid field_name="layer" value="1" />
+          <physvolid field_name="module" value="10" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule1Volume" />
+          <positionref ref="SiVertexEndcap_layer1_module10_reflect_position" />
+          <rotationref ref="SiVertexEndcap_layer1_module10_reflect_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="2" />
+          <physvolid field_name="layer" value="1" />
+          <physvolid field_name="module" value="10" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule1Volume" />
+          <positionref ref="SiVertexEndcap_layer1_module11_position" />
+          <rotationref ref="SiVertexEndcap_layer1_module11_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="1" />
+          <physvolid field_name="layer" value="1" />
+          <physvolid field_name="module" value="11" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule1Volume" />
+          <positionref ref="SiVertexEndcap_layer1_module11_reflect_position" />
+          <rotationref ref="SiVertexEndcap_layer1_module11_reflect_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="2" />
+          <physvolid field_name="layer" value="1" />
+          <physvolid field_name="module" value="11" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule1Volume" />
+          <positionref ref="SiVertexEndcap_layer1_module12_position" />
+          <rotationref ref="SiVertexEndcap_layer1_module12_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="1" />
+          <physvolid field_name="layer" value="1" />
+          <physvolid field_name="module" value="12" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule1Volume" />
+          <positionref ref="SiVertexEndcap_layer1_module12_reflect_position" />
+          <rotationref ref="SiVertexEndcap_layer1_module12_reflect_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="2" />
+          <physvolid field_name="layer" value="1" />
+          <physvolid field_name="module" value="12" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule1Volume" />
+          <positionref ref="SiVertexEndcap_layer1_module13_position" />
+          <rotationref ref="SiVertexEndcap_layer1_module13_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="1" />
+          <physvolid field_name="layer" value="1" />
+          <physvolid field_name="module" value="13" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule1Volume" />
+          <positionref ref="SiVertexEndcap_layer1_module13_reflect_position" />
+          <rotationref ref="SiVertexEndcap_layer1_module13_reflect_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="2" />
+          <physvolid field_name="layer" value="1" />
+          <physvolid field_name="module" value="13" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule1Volume" />
+          <positionref ref="SiVertexEndcap_layer1_module14_position" />
+          <rotationref ref="SiVertexEndcap_layer1_module14_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="1" />
+          <physvolid field_name="layer" value="1" />
+          <physvolid field_name="module" value="14" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule1Volume" />
+          <positionref ref="SiVertexEndcap_layer1_module14_reflect_position" />
+          <rotationref ref="SiVertexEndcap_layer1_module14_reflect_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="2" />
+          <physvolid field_name="layer" value="1" />
+          <physvolid field_name="module" value="14" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule1Volume" />
+          <positionref ref="SiVertexEndcap_layer1_module15_position" />
+          <rotationref ref="SiVertexEndcap_layer1_module15_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="1" />
+          <physvolid field_name="layer" value="1" />
+          <physvolid field_name="module" value="15" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule1Volume" />
+          <positionref ref="SiVertexEndcap_layer1_module15_reflect_position" />
+          <rotationref ref="SiVertexEndcap_layer1_module15_reflect_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="2" />
+          <physvolid field_name="layer" value="1" />
+          <physvolid field_name="module" value="15" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer2_module0_position" />
+          <rotationref ref="SiVertexEndcap_layer2_module0_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="1" />
+          <physvolid field_name="layer" value="2" />
+          <physvolid field_name="module" value="0" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer2_module0_reflect_position" />
+          <rotationref ref="SiVertexEndcap_layer2_module0_reflect_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="2" />
+          <physvolid field_name="layer" value="2" />
+          <physvolid field_name="module" value="0" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer2_module1_position" />
+          <rotationref ref="SiVertexEndcap_layer2_module1_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="1" />
+          <physvolid field_name="layer" value="2" />
+          <physvolid field_name="module" value="1" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer2_module1_reflect_position" />
+          <rotationref ref="SiVertexEndcap_layer2_module1_reflect_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="2" />
+          <physvolid field_name="layer" value="2" />
+          <physvolid field_name="module" value="1" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer2_module2_position" />
+          <rotationref ref="SiVertexEndcap_layer2_module2_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="1" />
+          <physvolid field_name="layer" value="2" />
+          <physvolid field_name="module" value="2" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer2_module2_reflect_position" />
+          <rotationref ref="SiVertexEndcap_layer2_module2_reflect_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="2" />
+          <physvolid field_name="layer" value="2" />
+          <physvolid field_name="module" value="2" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer2_module3_position" />
+          <rotationref ref="SiVertexEndcap_layer2_module3_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="1" />
+          <physvolid field_name="layer" value="2" />
+          <physvolid field_name="module" value="3" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer2_module3_reflect_position" />
+          <rotationref ref="SiVertexEndcap_layer2_module3_reflect_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="2" />
+          <physvolid field_name="layer" value="2" />
+          <physvolid field_name="module" value="3" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer2_module4_position" />
+          <rotationref ref="SiVertexEndcap_layer2_module4_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="1" />
+          <physvolid field_name="layer" value="2" />
+          <physvolid field_name="module" value="4" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer2_module4_reflect_position" />
+          <rotationref ref="SiVertexEndcap_layer2_module4_reflect_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="2" />
+          <physvolid field_name="layer" value="2" />
+          <physvolid field_name="module" value="4" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer2_module5_position" />
+          <rotationref ref="SiVertexEndcap_layer2_module5_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="1" />
+          <physvolid field_name="layer" value="2" />
+          <physvolid field_name="module" value="5" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer2_module5_reflect_position" />
+          <rotationref ref="SiVertexEndcap_layer2_module5_reflect_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="2" />
+          <physvolid field_name="layer" value="2" />
+          <physvolid field_name="module" value="5" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer2_module6_position" />
+          <rotationref ref="SiVertexEndcap_layer2_module6_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="1" />
+          <physvolid field_name="layer" value="2" />
+          <physvolid field_name="module" value="6" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer2_module6_reflect_position" />
+          <rotationref ref="SiVertexEndcap_layer2_module6_reflect_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="2" />
+          <physvolid field_name="layer" value="2" />
+          <physvolid field_name="module" value="6" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer2_module7_position" />
+          <rotationref ref="SiVertexEndcap_layer2_module7_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="1" />
+          <physvolid field_name="layer" value="2" />
+          <physvolid field_name="module" value="7" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer2_module7_reflect_position" />
+          <rotationref ref="SiVertexEndcap_layer2_module7_reflect_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="2" />
+          <physvolid field_name="layer" value="2" />
+          <physvolid field_name="module" value="7" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer2_module8_position" />
+          <rotationref ref="SiVertexEndcap_layer2_module8_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="1" />
+          <physvolid field_name="layer" value="2" />
+          <physvolid field_name="module" value="8" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer2_module8_reflect_position" />
+          <rotationref ref="SiVertexEndcap_layer2_module8_reflect_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="2" />
+          <physvolid field_name="layer" value="2" />
+          <physvolid field_name="module" value="8" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer2_module9_position" />
+          <rotationref ref="SiVertexEndcap_layer2_module9_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="1" />
+          <physvolid field_name="layer" value="2" />
+          <physvolid field_name="module" value="9" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer2_module9_reflect_position" />
+          <rotationref ref="SiVertexEndcap_layer2_module9_reflect_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="2" />
+          <physvolid field_name="layer" value="2" />
+          <physvolid field_name="module" value="9" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer2_module10_position" />
+          <rotationref ref="SiVertexEndcap_layer2_module10_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="1" />
+          <physvolid field_name="layer" value="2" />
+          <physvolid field_name="module" value="10" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer2_module10_reflect_position" />
+          <rotationref ref="SiVertexEndcap_layer2_module10_reflect_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="2" />
+          <physvolid field_name="layer" value="2" />
+          <physvolid field_name="module" value="10" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer2_module11_position" />
+          <rotationref ref="SiVertexEndcap_layer2_module11_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="1" />
+          <physvolid field_name="layer" value="2" />
+          <physvolid field_name="module" value="11" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer2_module11_reflect_position" />
+          <rotationref ref="SiVertexEndcap_layer2_module11_reflect_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="2" />
+          <physvolid field_name="layer" value="2" />
+          <physvolid field_name="module" value="11" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer2_module12_position" />
+          <rotationref ref="SiVertexEndcap_layer2_module12_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="1" />
+          <physvolid field_name="layer" value="2" />
+          <physvolid field_name="module" value="12" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer2_module12_reflect_position" />
+          <rotationref ref="SiVertexEndcap_layer2_module12_reflect_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="2" />
+          <physvolid field_name="layer" value="2" />
+          <physvolid field_name="module" value="12" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer2_module13_position" />
+          <rotationref ref="SiVertexEndcap_layer2_module13_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="1" />
+          <physvolid field_name="layer" value="2" />
+          <physvolid field_name="module" value="13" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer2_module13_reflect_position" />
+          <rotationref ref="SiVertexEndcap_layer2_module13_reflect_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="2" />
+          <physvolid field_name="layer" value="2" />
+          <physvolid field_name="module" value="13" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer2_module14_position" />
+          <rotationref ref="SiVertexEndcap_layer2_module14_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="1" />
+          <physvolid field_name="layer" value="2" />
+          <physvolid field_name="module" value="14" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer2_module14_reflect_position" />
+          <rotationref ref="SiVertexEndcap_layer2_module14_reflect_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="2" />
+          <physvolid field_name="layer" value="2" />
+          <physvolid field_name="module" value="14" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer2_module15_position" />
+          <rotationref ref="SiVertexEndcap_layer2_module15_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="1" />
+          <physvolid field_name="layer" value="2" />
+          <physvolid field_name="module" value="15" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer2_module15_reflect_position" />
+          <rotationref ref="SiVertexEndcap_layer2_module15_reflect_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="2" />
+          <physvolid field_name="layer" value="2" />
+          <physvolid field_name="module" value="15" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer3_module0_position" />
+          <rotationref ref="SiVertexEndcap_layer3_module0_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="1" />
+          <physvolid field_name="layer" value="3" />
+          <physvolid field_name="module" value="0" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer3_module0_reflect_position" />
+          <rotationref ref="SiVertexEndcap_layer3_module0_reflect_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="2" />
+          <physvolid field_name="layer" value="3" />
+          <physvolid field_name="module" value="0" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer3_module1_position" />
+          <rotationref ref="SiVertexEndcap_layer3_module1_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="1" />
+          <physvolid field_name="layer" value="3" />
+          <physvolid field_name="module" value="1" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer3_module1_reflect_position" />
+          <rotationref ref="SiVertexEndcap_layer3_module1_reflect_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="2" />
+          <physvolid field_name="layer" value="3" />
+          <physvolid field_name="module" value="1" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer3_module2_position" />
+          <rotationref ref="SiVertexEndcap_layer3_module2_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="1" />
+          <physvolid field_name="layer" value="3" />
+          <physvolid field_name="module" value="2" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer3_module2_reflect_position" />
+          <rotationref ref="SiVertexEndcap_layer3_module2_reflect_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="2" />
+          <physvolid field_name="layer" value="3" />
+          <physvolid field_name="module" value="2" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer3_module3_position" />
+          <rotationref ref="SiVertexEndcap_layer3_module3_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="1" />
+          <physvolid field_name="layer" value="3" />
+          <physvolid field_name="module" value="3" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer3_module3_reflect_position" />
+          <rotationref ref="SiVertexEndcap_layer3_module3_reflect_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="2" />
+          <physvolid field_name="layer" value="3" />
+          <physvolid field_name="module" value="3" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer3_module4_position" />
+          <rotationref ref="SiVertexEndcap_layer3_module4_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="1" />
+          <physvolid field_name="layer" value="3" />
+          <physvolid field_name="module" value="4" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer3_module4_reflect_position" />
+          <rotationref ref="SiVertexEndcap_layer3_module4_reflect_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="2" />
+          <physvolid field_name="layer" value="3" />
+          <physvolid field_name="module" value="4" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer3_module5_position" />
+          <rotationref ref="SiVertexEndcap_layer3_module5_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="1" />
+          <physvolid field_name="layer" value="3" />
+          <physvolid field_name="module" value="5" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer3_module5_reflect_position" />
+          <rotationref ref="SiVertexEndcap_layer3_module5_reflect_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="2" />
+          <physvolid field_name="layer" value="3" />
+          <physvolid field_name="module" value="5" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer3_module6_position" />
+          <rotationref ref="SiVertexEndcap_layer3_module6_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="1" />
+          <physvolid field_name="layer" value="3" />
+          <physvolid field_name="module" value="6" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer3_module6_reflect_position" />
+          <rotationref ref="SiVertexEndcap_layer3_module6_reflect_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="2" />
+          <physvolid field_name="layer" value="3" />
+          <physvolid field_name="module" value="6" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer3_module7_position" />
+          <rotationref ref="SiVertexEndcap_layer3_module7_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="1" />
+          <physvolid field_name="layer" value="3" />
+          <physvolid field_name="module" value="7" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer3_module7_reflect_position" />
+          <rotationref ref="SiVertexEndcap_layer3_module7_reflect_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="2" />
+          <physvolid field_name="layer" value="3" />
+          <physvolid field_name="module" value="7" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer3_module8_position" />
+          <rotationref ref="SiVertexEndcap_layer3_module8_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="1" />
+          <physvolid field_name="layer" value="3" />
+          <physvolid field_name="module" value="8" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer3_module8_reflect_position" />
+          <rotationref ref="SiVertexEndcap_layer3_module8_reflect_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="2" />
+          <physvolid field_name="layer" value="3" />
+          <physvolid field_name="module" value="8" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer3_module9_position" />
+          <rotationref ref="SiVertexEndcap_layer3_module9_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="1" />
+          <physvolid field_name="layer" value="3" />
+          <physvolid field_name="module" value="9" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer3_module9_reflect_position" />
+          <rotationref ref="SiVertexEndcap_layer3_module9_reflect_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="2" />
+          <physvolid field_name="layer" value="3" />
+          <physvolid field_name="module" value="9" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer3_module10_position" />
+          <rotationref ref="SiVertexEndcap_layer3_module10_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="1" />
+          <physvolid field_name="layer" value="3" />
+          <physvolid field_name="module" value="10" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer3_module10_reflect_position" />
+          <rotationref ref="SiVertexEndcap_layer3_module10_reflect_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="2" />
+          <physvolid field_name="layer" value="3" />
+          <physvolid field_name="module" value="10" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer3_module11_position" />
+          <rotationref ref="SiVertexEndcap_layer3_module11_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="1" />
+          <physvolid field_name="layer" value="3" />
+          <physvolid field_name="module" value="11" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer3_module11_reflect_position" />
+          <rotationref ref="SiVertexEndcap_layer3_module11_reflect_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="2" />
+          <physvolid field_name="layer" value="3" />
+          <physvolid field_name="module" value="11" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer3_module12_position" />
+          <rotationref ref="SiVertexEndcap_layer3_module12_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="1" />
+          <physvolid field_name="layer" value="3" />
+          <physvolid field_name="module" value="12" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer3_module12_reflect_position" />
+          <rotationref ref="SiVertexEndcap_layer3_module12_reflect_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="2" />
+          <physvolid field_name="layer" value="3" />
+          <physvolid field_name="module" value="12" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer3_module13_position" />
+          <rotationref ref="SiVertexEndcap_layer3_module13_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="1" />
+          <physvolid field_name="layer" value="3" />
+          <physvolid field_name="module" value="13" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer3_module13_reflect_position" />
+          <rotationref ref="SiVertexEndcap_layer3_module13_reflect_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="2" />
+          <physvolid field_name="layer" value="3" />
+          <physvolid field_name="module" value="13" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer3_module14_position" />
+          <rotationref ref="SiVertexEndcap_layer3_module14_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="1" />
+          <physvolid field_name="layer" value="3" />
+          <physvolid field_name="module" value="14" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer3_module14_reflect_position" />
+          <rotationref ref="SiVertexEndcap_layer3_module14_reflect_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="2" />
+          <physvolid field_name="layer" value="3" />
+          <physvolid field_name="module" value="14" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer3_module15_position" />
+          <rotationref ref="SiVertexEndcap_layer3_module15_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="1" />
+          <physvolid field_name="layer" value="3" />
+          <physvolid field_name="module" value="15" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer3_module15_reflect_position" />
+          <rotationref ref="SiVertexEndcap_layer3_module15_reflect_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="2" />
+          <physvolid field_name="layer" value="3" />
+          <physvolid field_name="module" value="15" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer4_module0_position" />
+          <rotationref ref="SiVertexEndcap_layer4_module0_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="1" />
+          <physvolid field_name="layer" value="4" />
+          <physvolid field_name="module" value="0" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer4_module0_reflect_position" />
+          <rotationref ref="SiVertexEndcap_layer4_module0_reflect_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="2" />
+          <physvolid field_name="layer" value="4" />
+          <physvolid field_name="module" value="0" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer4_module1_position" />
+          <rotationref ref="SiVertexEndcap_layer4_module1_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="1" />
+          <physvolid field_name="layer" value="4" />
+          <physvolid field_name="module" value="1" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer4_module1_reflect_position" />
+          <rotationref ref="SiVertexEndcap_layer4_module1_reflect_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="2" />
+          <physvolid field_name="layer" value="4" />
+          <physvolid field_name="module" value="1" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer4_module2_position" />
+          <rotationref ref="SiVertexEndcap_layer4_module2_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="1" />
+          <physvolid field_name="layer" value="4" />
+          <physvolid field_name="module" value="2" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer4_module2_reflect_position" />
+          <rotationref ref="SiVertexEndcap_layer4_module2_reflect_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="2" />
+          <physvolid field_name="layer" value="4" />
+          <physvolid field_name="module" value="2" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer4_module3_position" />
+          <rotationref ref="SiVertexEndcap_layer4_module3_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="1" />
+          <physvolid field_name="layer" value="4" />
+          <physvolid field_name="module" value="3" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer4_module3_reflect_position" />
+          <rotationref ref="SiVertexEndcap_layer4_module3_reflect_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="2" />
+          <physvolid field_name="layer" value="4" />
+          <physvolid field_name="module" value="3" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer4_module4_position" />
+          <rotationref ref="SiVertexEndcap_layer4_module4_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="1" />
+          <physvolid field_name="layer" value="4" />
+          <physvolid field_name="module" value="4" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer4_module4_reflect_position" />
+          <rotationref ref="SiVertexEndcap_layer4_module4_reflect_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="2" />
+          <physvolid field_name="layer" value="4" />
+          <physvolid field_name="module" value="4" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer4_module5_position" />
+          <rotationref ref="SiVertexEndcap_layer4_module5_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="1" />
+          <physvolid field_name="layer" value="4" />
+          <physvolid field_name="module" value="5" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer4_module5_reflect_position" />
+          <rotationref ref="SiVertexEndcap_layer4_module5_reflect_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="2" />
+          <physvolid field_name="layer" value="4" />
+          <physvolid field_name="module" value="5" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer4_module6_position" />
+          <rotationref ref="SiVertexEndcap_layer4_module6_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="1" />
+          <physvolid field_name="layer" value="4" />
+          <physvolid field_name="module" value="6" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer4_module6_reflect_position" />
+          <rotationref ref="SiVertexEndcap_layer4_module6_reflect_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="2" />
+          <physvolid field_name="layer" value="4" />
+          <physvolid field_name="module" value="6" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer4_module7_position" />
+          <rotationref ref="SiVertexEndcap_layer4_module7_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="1" />
+          <physvolid field_name="layer" value="4" />
+          <physvolid field_name="module" value="7" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer4_module7_reflect_position" />
+          <rotationref ref="SiVertexEndcap_layer4_module7_reflect_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="2" />
+          <physvolid field_name="layer" value="4" />
+          <physvolid field_name="module" value="7" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer4_module8_position" />
+          <rotationref ref="SiVertexEndcap_layer4_module8_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="1" />
+          <physvolid field_name="layer" value="4" />
+          <physvolid field_name="module" value="8" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer4_module8_reflect_position" />
+          <rotationref ref="SiVertexEndcap_layer4_module8_reflect_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="2" />
+          <physvolid field_name="layer" value="4" />
+          <physvolid field_name="module" value="8" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer4_module9_position" />
+          <rotationref ref="SiVertexEndcap_layer4_module9_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="1" />
+          <physvolid field_name="layer" value="4" />
+          <physvolid field_name="module" value="9" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer4_module9_reflect_position" />
+          <rotationref ref="SiVertexEndcap_layer4_module9_reflect_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="2" />
+          <physvolid field_name="layer" value="4" />
+          <physvolid field_name="module" value="9" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer4_module10_position" />
+          <rotationref ref="SiVertexEndcap_layer4_module10_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="1" />
+          <physvolid field_name="layer" value="4" />
+          <physvolid field_name="module" value="10" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer4_module10_reflect_position" />
+          <rotationref ref="SiVertexEndcap_layer4_module10_reflect_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="2" />
+          <physvolid field_name="layer" value="4" />
+          <physvolid field_name="module" value="10" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer4_module11_position" />
+          <rotationref ref="SiVertexEndcap_layer4_module11_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="1" />
+          <physvolid field_name="layer" value="4" />
+          <physvolid field_name="module" value="11" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer4_module11_reflect_position" />
+          <rotationref ref="SiVertexEndcap_layer4_module11_reflect_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="2" />
+          <physvolid field_name="layer" value="4" />
+          <physvolid field_name="module" value="11" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer4_module12_position" />
+          <rotationref ref="SiVertexEndcap_layer4_module12_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="1" />
+          <physvolid field_name="layer" value="4" />
+          <physvolid field_name="module" value="12" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer4_module12_reflect_position" />
+          <rotationref ref="SiVertexEndcap_layer4_module12_reflect_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="2" />
+          <physvolid field_name="layer" value="4" />
+          <physvolid field_name="module" value="12" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer4_module13_position" />
+          <rotationref ref="SiVertexEndcap_layer4_module13_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="1" />
+          <physvolid field_name="layer" value="4" />
+          <physvolid field_name="module" value="13" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer4_module13_reflect_position" />
+          <rotationref ref="SiVertexEndcap_layer4_module13_reflect_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="2" />
+          <physvolid field_name="layer" value="4" />
+          <physvolid field_name="module" value="13" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer4_module14_position" />
+          <rotationref ref="SiVertexEndcap_layer4_module14_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="1" />
+          <physvolid field_name="layer" value="4" />
+          <physvolid field_name="module" value="14" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer4_module14_reflect_position" />
+          <rotationref ref="SiVertexEndcap_layer4_module14_reflect_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="2" />
+          <physvolid field_name="layer" value="4" />
+          <physvolid field_name="module" value="14" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer4_module15_position" />
+          <rotationref ref="SiVertexEndcap_layer4_module15_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="1" />
+          <physvolid field_name="layer" value="4" />
+          <physvolid field_name="module" value="15" />
+        </physvol>
+        <physvol>
+          <volumeref ref="SiVertexEndcapModule2Volume" />
+          <positionref ref="SiVertexEndcap_layer4_module15_reflect_position" />
+          <rotationref ref="SiVertexEndcap_layer4_module15_reflect_rotation" />
+          <physvolid field_name="system" value="2" />
+          <physvolid field_name="barrel" value="2" />
+          <physvolid field_name="layer" value="4" />
+          <physvolid field_name="module" value="15" />
+        </physvol>
+        <regionref ref="TrackingRegion" />
+        <visref ref="TrackingVis" />
+      </volume>
+      <volume name="world_volume">
+        <materialref ref="Air" />
+        <solidref ref="world_box" />
+        <physvol>
+          <volumeref ref="tracking_volume" />
+          <positionref ref="identity_pos" />
+          <rotationref ref="identity_rot" />
+        </physvol>
+        <visref ref="WorldVis" />
+      </volume>
+    </structure>
+    <setup name="Default" version="1.0">
+      <world ref="world_volume" />
+    </setup>
+  </gdml>
+  <fields>
+    <solenoid name="GlobalSolenoid" lunit="mm" funit="tesla" outer_radius="world_side" inner_field="5.0" outer_field="-0.6" zmax="1000.0" zmin="-1000.0" inner_radius="2923.0" />
+  </fields>
+</lcdd>
+
