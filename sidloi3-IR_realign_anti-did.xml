@@ -1,7 +1,7 @@
 <lccdd xmlns:compact="http://www.lcsim.org/schemas/compact/0.0" 
     xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" 
     xs:noNamespaceSchemaLocation="http://www.lcsim.org/schemas/compact/1.0/compact.xsd">
-    <info name="sidloi3-IR_realign"
+    <info name="sidloi3-IR_realign_anti-did"
         title="Silicon Detector LOI"
         author="Norman Graf, Jeremy McCormick, Christopher Milke"
         url="http://confluence.slac.stanford.edu/display/ilc/sidloi"
@@ -1199,5 +1199,14 @@
         <field type="Solenoid" name="GlobalSolenoid" inner_field="5.0"
         outer_field="-0.6" zmax="1000"
         outer_radius="SolenoidalFieldRadius" />
+        <field type="Dipole" name="DID" zmax="521.0*cm" zmin="-521.0*cm" rmax="(221.0+ 5.0 + 17.5 + 40./2.)*cm">  
+        <dipoleCoeff value="1.5343e-4"/>
+        <dipoleCoeff value="1.8476e-5"/>
+        <dipoleCoeff value="5.0422e-9"/>
+        <dipoleCoeff value="-9.2768e-12"/>
+        <dipoleCoeff value="3.0064e-15"/>
+        <dipoleCoeff value="-3.9413e-19"/>
+        <dipoleCoeff value="1.886e-23"/>
+	</field>
     </fields>
 </lccdd>

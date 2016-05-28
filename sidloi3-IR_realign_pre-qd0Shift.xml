@@ -1,7 +1,7 @@
 <lccdd xmlns:compact="http://www.lcsim.org/schemas/compact/0.0" 
     xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" 
     xs:noNamespaceSchemaLocation="http://www.lcsim.org/schemas/compact/1.0/compact.xsd">
-    <info name="sidloi3-IR_realign"
+    <info name="sidloi3-IR_realign_pre-qd0Shift"
         title="Silicon Detector LOI"
         author="Norman Graf, Jeremy McCormick, Christopher Milke"
         url="http://confluence.slac.stanford.edu/display/ilc/sidloi"
@@ -20,7 +20,7 @@
         <constant name="tracker_setback" value="EcalEndcap_zmin - LumiCal_zmin"/> <!--used to move the tracking region back from the LumiCal-->
         <constant name="tracking_region_zmax" value="EcalEndcap_zmin - 1.0 - tracker_setback"/>
         <constant name="tracking_region_radius" value="EcalBarrel_rmin - 1.0"/>
-        <constant name="BeamCal_zmin" value="3265"/>
+        <constant name="BeamCal_zmin" value="2775"/>
         <constant name="BeamCal_zmax" value="BeamCal_zmin + 175.0"/>
         <constant name="ForwardLowZ_thick" value="130.0"/>
         <constant name="ForwardLowZ_zmin" value="BeamCal_zmin - ForwardLowZ_thick"/>

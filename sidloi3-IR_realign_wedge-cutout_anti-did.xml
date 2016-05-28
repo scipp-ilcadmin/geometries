@@ -1,7 +1,7 @@
 <lccdd xmlns:compact="http://www.lcsim.org/schemas/compact/0.0" 
     xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" 
     xs:noNamespaceSchemaLocation="http://www.lcsim.org/schemas/compact/1.0/compact.xsd">
-    <info name="sidloi3-IR_realign"
+    <info name="sidloi3-IR_realign_wedge-cutout_anti-did"
         title="Silicon Detector LOI"
         author="Norman Graf, Jeremy McCormick, Christopher Milke"
         url="http://confluence.slac.stanford.edu/display/ilc/sidloi"
@@ -668,7 +668,7 @@
         <detector id="12" name="BeamCal" reflect="true" align_to_pipeout="true" type="ForwardDetector" readout="BeamCalHits" vis="BeamCalVis" calorimeterType="BEAM">
             <comment>Beam Calorimeter</comment>
             <dimensions outer_r="14.0*cm" inner_r="0.0*cm" inner_z="BeamCal_zmin" />
-            <beampipe crossing_angle="crossing_angle" outgoing_r="2.05*cm" incoming_r="1.55*cm" plug_type="full"/>
+            <beampipe crossing_angle="crossing_angle" outgoing_r="2.05*cm" incoming_r="1.55*cm" plug_type="wedge"/>
             <layer repeat="50">
                 <slice material="TungstenDens24" thickness="0.25*cm" />
                 <slice material="Silicon" thickness="0.032*cm" sensitive="yes" />
@@ -703,6 +703,11 @@
             <zplane rmin = "19.4*cm" rmax="21.1*cm" z="-170.0*cm" />
         </detector>
         <comment>Incoming and outgoing beampipes in far forward region</comment>
+        <detector name="WedgeCombinedBeampipe" reflect="true" type="WedgeTubeSegment" vis="InvisibleNoDaughters">
+            <material name="Iron" />
+            <dimensions inner_z="BeamCal_zmin" outer_z="BeamCal_zmax" />
+            <beampipe crossing_angle="crossing_angle" rin_min="1.5*cm" rin_max="1.54*cm" rout_min="2.0*cm" rout_max="2.04*cm"/>
+        </detector>
         <!--detector name="NorthCombinedBeampipe" type="TubeSegment" vis="InvisibleNoDaughters">
             <material name="Iron" />
             <tubs rmin="4.158*cm" rmax="4.198*cm" zhalf="8.75*cm" />
@@ -715,7 +720,7 @@
             <position x="0.25*cm" y="0" z="-335.25*cm" />
             <rotation x="0.0" y="0.0" z="0.0" />
         </detector-->
-        <detector name="NorthIncomingBeampipe" type="TubeSegment" vis="InvisibleNoDaughters">
+        <!--detector name="NorthIncomingBeampipe" type="TubeSegment" vis="InvisibleNoDaughters">
             <material name="Iron" />
             <tubs rmin="1.5*cm" rmax="1.54*cm" zhalf="(BeamCal_zmax-BeamCal_zmin)/2" />
             <position x="-( BeamCal_zmin + (BeamCal_zmax-BeamCal_zmin)/2 )*(crossing_angle/2)" y="0" z="BeamCal_zmin + (BeamCal_zmax-BeamCal_zmin)/2" />
@@ -738,7 +743,7 @@
             <tubs rmin="2.0*cm" rmax="2.04*cm" zhalf="(BeamCal_zmax-BeamCal_zmin)/2" />
             <position x="( BeamCal_zmin + (BeamCal_zmax-BeamCal_zmin)/2 )*(crossing_angle/2)" y="0" z="-( BeamCal_zmin + (BeamCal_zmax-BeamCal_zmin)/2 )" />
             <rotation x="0.0" y="0.0070" z="0.0" />
-        </detector>
+        </detector-->
         <detector name="BeamPipeLiner" type="PolyconeSupport" insideTrackingVolume="true" vis="InvisibleNoDaughters">
             <comment>BeamPipe Liner to shield bremsstrahlung photons</comment>
             <material name="Titanium"/>
@@ -1119,7 +1124,7 @@
      
         <detector name="ForwardLowZ" type="ForwardDetector" reflect="true" align_to_pipeout="true">
             <dimensions outer_r="14.0*cm" inner_r="0.0*cm" inner_z="ForwardLowZ_zmin" />
-            <beampipe crossing_angle="0.014" outgoing_r="2.05*cm" incoming_r="1.55*cm" />
+            <beampipe crossing_angle="0.014" outgoing_r="2.05*cm" incoming_r="1.55*cm" plug_type="wedge"/>
             <layer repeat="1">
                 <slice material = "BoratedPolyethylene5" thickness = "ForwardLowZ_thick" sensitive = "no" />
             </layer>
@@ -1199,5 +1204,14 @@
         <field type="Solenoid" name="GlobalSolenoid" inner_field="5.0"
         outer_field="-0.6" zmax="1000"
         outer_radius="SolenoidalFieldRadius" />
+        <field type="Dipole" name="DID" zmax="521.0*cm" zmin="-521.0*cm" rmax="(221.0+ 5.0 + 17.5 + 40./2.)*cm">  
+        <dipoleCoeff value="1.5343e-4"/>
+        <dipoleCoeff value="1.8476e-5"/>
+        <dipoleCoeff value="5.0422e-9"/>
+        <dipoleCoeff value="-9.2768e-12"/>
+        <dipoleCoeff value="3.0064e-15"/>
+        <dipoleCoeff value="-3.9413e-19"/>
+        <dipoleCoeff value="1.886e-23"/>
+	</field>
     </fields>
 </lccdd>

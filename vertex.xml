@@ -1,4 +1,4 @@
-<lccdd xmlns:compact="http://www.lcsim.org/schemas/compact/1.0" 
+<lccdd xmlns:compact="http://www.lcsim.org/schemas/compact/0.0" 
     xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" 
     xs:noNamespaceSchemaLocation="http://www.lcsim.org/schemas/compact/1.0/compact.xsd">
     <info name="sidloi3-IR_realign"
@@ -15,9 +15,16 @@
         <constant name="world_z" value="world_side"/>
         <constant name="EcalBarrel_rmin" value="1270.0"/>
         <constant name="EcalEndcap_zmin" value="1657.0"/>
+        <constant name="LumiCal_zmin" value="1557.0"/>
+        <constant name="LumiCal_zmax" value="LumiCal_zmin + 138.5"/>
+        <constant name="tracker_setback" value="EcalEndcap_zmin - LumiCal_zmin"/> <!--used to move the tracking region back from the LumiCal-->
+        <constant name="tracking_region_zmax" value="EcalEndcap_zmin - 1.0 - tracker_setback"/>
         <constant name="tracking_region_radius" value="EcalBarrel_rmin - 1.0"/>
-        <constant name="tracking_region_zmax" value="EcalEndcap_zmin - 1.0"/>
-        <constant name="lumical_zmin" value="155.7*cm"/>
+        <constant name="BeamCal_zmin" value="3265"/>
+        <constant name="BeamCal_zmax" value="BeamCal_zmin + 175.0"/>
+        <constant name="ForwardLowZ_thick" value="130.0"/>
+        <constant name="ForwardLowZ_zmin" value="BeamCal_zmin - ForwardLowZ_thick"/>
+        <constant name="crossing_angle" value="0.014"/>
         <constant name="VXD_CF_sensor" value="0.026*cm"/>
         <constant name="VXD_CF_support" value="0.05*cm"/>
         <constant name="bp_cone_slope" value="(8.96-1.20)/(185-6.25)"/>
@@ -140,84 +147,100 @@
         
     </display>
     <detectors>
-        <detector id="12" name="BeamCal" reflect="true" align_to_pipeout="true" type="ForwardDetector" readout="BeamCalHits" vis="BeamCalVis" calorimeterType="BEAM">
-            <comment>Beam Calorimeter</comment>
-            <dimensions outer_r="14.0*cm" inner_r="0.0*cm" inner_z="326.5*cm" />
-            <beampipe crossing_angle="0.014" outgoing_r="2.05*cm" incoming_r="1.55*cm" plug_type="full"/>
-            <layer repeat="50">
-                <slice material="TungstenDens24" thickness="0.25*cm" />
-                <slice material="Silicon" thickness="0.032*cm" sensitive="yes" />
-                <slice material="Copper" thickness="0.005*cm" />
-                <slice material="Kapton" thickness="0.030*cm" />
-                <slice material="Air" thickness="0.033*cm" />
+        <comment>Trackers</comment> 
+        <detector id="1" name="SiVertexBarrel" type="SiTrackerBarrel" readout="SiVertexBarrelHits" insideTrackingVolume="true" vis="SiVertexBarrelVis">
+            <comment>Vertex Detector Barrel</comment>
+            <module name="VtxBarrelModuleInner">
+                <module_envelope width="9.8" length="63.0 * 2" thickness="0.6"/>
+                <module_component width="7.6" length="125.0" thickness="VXD_CF_sensor" material="CarbonFiber_25percent" sensitive="false">
+                    <position z="-0.12"/>
+                </module_component>
+                <module_component width="7.6" length="125.0" thickness="0.05" material="Epoxy" sensitive="false">
+                    <position z="0.075"/>
+                </module_component>
+                <module_component width="9.6" length="125.0" thickness="0.093" material="Silicon" sensitive="false">
+                    <position z="0.150"/>
+                </module_component>
+                <module_component width="9.6" length="125.0" thickness="0.02" material="Silicon" sensitive="true">
+                    <position z="0.225"/>
+                </module_component>
+            </module>
+            <module name="VtxBarrelModuleOuter">
+                <module_envelope width="14.0" length="126.0" thickness="0.6"/>
+                <module_component width="11.6" length="125.0" thickness="VXD_CF_sensor" material="CarbonFiber_25percent" sensitive="false">
+                    <position z="-0.12"/>
+                </module_component>
+                <module_component width="11.6" length="125.0" thickness="0.05" material="Epoxy" sensitive="false">
+                    <position z="0.075"/>
+                </module_component>
+                <module_component width="13.8" length="125.0" thickness="0.093" material="Silicon" sensitive="false">
+                    <position z="0.150"/>
+                </module_component>
+                <module_component width="13.8" length="125.0" thickness="0.02" material="Silicon" sensitive="true">
+                    <position z="0.210"/>
+                </module_component>
+            </module>
+            <layer module="VtxBarrelModuleInner" id="1" >
+                <barrel_envelope inner_r="13.0" outer_r="17.0" z_length="63 * 2"/>
+                <rphi_layout phi_tilt="0.0" nphi="12" phi0="0.2618" rc="15.05" dr="-1.15"/>
+                <z_layout dr="0.0" z0="0.0" nz="1"/>
+            </layer>
+            <layer module="VtxBarrelModuleOuter" id="2" >
+                <barrel_envelope inner_r="21.0" outer_r="25.0" z_length="63 * 2"/>
+                <rphi_layout phi_tilt="0.0" nphi="12" phi0="0.2618" rc="23.03" dr="-1.13"/>
+                <z_layout dr="0.0" z0="0.0" nz="1"/>
+            </layer>
+            <layer module="VtxBarrelModuleOuter" id="3" >
+                <barrel_envelope inner_r="34.0" outer_r="38.0" z_length="63 * 2"/>
+                <rphi_layout phi_tilt="0.0" nphi="18" phi0="0.0" rc="35.79" dr="-0.89"/>
+                <z_layout dr="0.0" z0="0.0" nz="1"/>
+            </layer>
+            <layer module="VtxBarrelModuleOuter" id="4" >
+                <barrel_envelope inner_r="46.6" outer_r="50.6" z_length="63 * 2"/>
+                <rphi_layout phi_tilt="0.0" nphi="24" phi0="0.1309" rc="47.5" dr="0.81"/>
+                <z_layout dr="0.0" z0="0.0" nz="1"/>
+            </layer>
+            <layer module="VtxBarrelModuleOuter" id="5" >
+                <barrel_envelope inner_r="59.0" outer_r="63.0" z_length="63 * 2"/>
+                <rphi_layout phi_tilt="0.0" nphi="30" phi0="0.0" rc="59.9" dr="0.77"/>
+                <z_layout dr="0.0" z0="0.0" nz="1"/>
             </layer>
         </detector>
-        <comment>Incoming and outgoing beampipes in far forward region</comment>
-        <!--detector name="NorthCombinedBeampipe" type="TubeSegment" vis="InvisibleNoDaughters">
-            <material name="Iron" />
-            <tubs rmin="4.158*cm" rmax="4.198*cm" zhalf="8.75*cm" />
-            <position x="0.25*cm" y="0" z="335.25*cm" />
-            <rotation x="0.0" y="0.0" z="0.0" />
-        </detector>
-        <detector name="SouthCombinedBeampipe" type="TubeSegment" vis="InvisibleNoDaughters">
-            <material name="Iron" />
-            <tubs rmin="4.158*cm" rmax="4.198*cm" zhalf="8.75*cm" />
-            <position x="0.25*cm" y="0" z="-335.25*cm" />
-            <rotation x="0.0" y="0.0" z="0.0" />
-        </detector-->
-        <detector name="NorthIncomingBeampipe" type="TubeSegment" vis="InvisibleNoDaughters">
-            <material name="Iron" />
-            <tubs rmin="1.5*cm" rmax="1.54*cm" zhalf="8.75*cm" />
-            <position x="-2.347*cm" y="0" z="335.25*cm" />
-            <rotation x="0.0" y="0.0070" z="0.0" />
-        </detector>
-        <detector name="NorthOutgoingBeampipe" type="TubeSegment" vis="InvisibleNoDaughters">
-            <material name="Iron" />
-            <tubs rmin="2.0*cm" rmax="2.04*cm" zhalf="8.75*cm" />
-            <position x="2.347*cm" y="0" z="335.25*cm" />
-            <rotation x="0.0" y="-0.0070" z="0.0" />
-        </detector-->
-        <detector name="SouthIncomingBeampipe" type="TubeSegment" vis="InvisibleNoDaughters">
-            <material name="Iron" />
-            <tubs rmin="1.5*cm" rmax="1.54*cm" zhalf="8.75*cm" />
-            <position x="-2.347*cm" y="0" z="-335.25*cm" />
-            <rotation x="0.0" y="-0.0070" z="0.0" />
-        </detector>
-        <detector name="SouthOutgoingBeampipe" type="TubeSegment" vis="InvisibleNoDaughters">
-            <material name="Iron" />
-            <tubs rmin="2.0*cm" rmax="2.04*cm" zhalf="8.75*cm" />
-            <position x="2.347*cm" y="0" z="-335.25*cm" />
-            <rotation x="0.0" y="0.0070" z="0.0" />
-        </detector>
-        <comment>Masks</comment>
-        <!--detector name="ForwardM1" type="PolyconeSupport" insideTrackingVolume="false" vis="InvisibleNoDaughters">
-            <material name="TungstenDens24"/>
-            <rotation y_rotation="-crossing_angle/2" />
-            <zplane rmin= "7.0*cm" rmax="10.0*cm" z="170.0*cm" /> 
-            <zplane rmin="14.0*cm" rmax="17*cm"  z="313.5*cm"/>   
-            <zplane rmin="14.0*cm" rmax="17*cm"  z="326.5*cm"/>   
-        </detector-->
-
-<!--determined by zmax of lumical-->
-<!--determined by zmin of FowardLowZ-->
-<!--determined by zmax of FowardLowZ-->
-    
-        <!--detector name="BackwardM1" type="PolyconeSupport" insideTrackingVolume="false" vis="InvisibleNoDaughters">
-            <material name="TungstenDens24"/>
-            <rotation y_rotation="crossing_angle/2" />
-            <zplane rmin="14.0*cm" rmax="17*cm"  z="-326.5*cm"/>
-            <zplane rmin="14.0*cm" rmax="17*cm"  z="-313.5*cm"/>
-            <zplane rmin= "7.0*cm" rmax="10.0*cm" z="-170.0*cm" />
-        </detector-->
-     
-        <!--detector name="ForwardLowZ" type="ForwardDetector" reflect="false" allign_to_pipeout="true">
-            <dimensions outer_r="14.0*cm" inner_r="0.0*cm" inner_z="313.5*cm" />
-            <beampipe crossing_angle="0.014" outgoing_r="2.05*cm" incoming_r="1.55*cm" />
-            <layer repeat="1">
-                <slice material = "BoratedPolyethylene5" thickness = "13.0*cm" sensitive = "no" />
+        <comment>Vertex Detector Endcaps</comment>
+        <detector id="2" name="SiVertexEndcap" type="SiTrackerEndcap2" readout="SiVertexEndcapHits" vis="SiVertexEndcapVis">
+            <module name="SiVertexEndcapModule1">
+                <trd x1="3.034" x2="14.682" z="29.280" />
+                <module_component thickness="0.002*cm" material="Silicon" sensitive="true" />
+                <module_component thickness="0.008*cm"   material="Silicon" />
+            </module>
+            <module name="SiVertexEndcapModule2">
+                <trd x1="3.233" x2="14.682" z="28.780" />
+                <module_component thickness="0.002*cm" material="Silicon" sensitive="true" />
+                <module_component thickness="0.008*cm"   material="Silicon" />
+            </module>
+            <module name="SiVertexEndcapModule3">
+                <trd x1="3.630" x2="14.682" z="27.780" />
+                <module_component thickness="0.002*cm" material="Silicon" sensitive="true" />
+                <module_component thickness="0.008*cm"   material="Silicon" />
+            </module>
+            <module name="SiVertexEndcapModule4">
+                <trd x1="4.227" x2="14.682" z="26.280" />
+                <module_component thickness="0.002*cm" material="Silicon" sensitive="true" />
+                <module_component thickness="0.008*cm"   material="Silicon" />
+            </module>
+            <layer id="1">
+                <ring r="45.0" zstart="76" nmodules="16" dz="0.011" module="SiVertexEndcapModule1"/>
             </layer>
-        </detector-->
-  
+            <layer id="2">
+                <ring r="45.5" zstart="95" nmodules="16" dz="0.011" module="SiVertexEndcapModule2"/>
+            </layer>
+            <layer id="3">
+                <ring r="46.5" zstart="125" nmodules="16" dz="0.011" module="SiVertexEndcapModule2"/>
+            </layer>
+            <layer id="4">
+                <ring r="48.0" zstart="180" nmodules="16" dz="0.011" module="SiVertexEndcapModule2"/>
+            </layer>
+        </detector> 
     </detectors>
     <readouts>
         <readout name="SiTrackerEndcapHits">
